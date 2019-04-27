@@ -1,0 +1,85 @@
+<div class = "container3">
+<div class = "container4">
+<% if @article.title.present? %>
+<h1 class="draft-area"><%= raw(@article.title.gsub(/\n/,'<br>') )%></h1>
+<% else %>
+<% end %>
+
+<% if @article.titleimg.present? %>
+<img src="<%= "/article_images/#{@article.titleimg}" %>" class="article_image">
+<% else %>
+<% end %>
+
+<div class="draft-article">
+
+<% if @article.lead.present? %>
+<%= raw(@article.lead.gsub(/\n/,'<br>') )%>
+<% else %>
+<% end %>
+
+<% if @article.topic1.present? %>
+<h2 class="draft-topic">
+<%= raw(@article.topic1.gsub(/\n/,'<br>') )%>
+</h2>
+<% else %>
+<% end %>
+<% if @article.content1.present? %>
+<p>
+<%= raw(@article.content1.gsub(/\n/,'<br>') )%>
+</p>
+<% else %>
+<% end %>
+<% if @article.img1.present? %>
+<img src="<%= "/article_images/#{@article.img1}" %>" class="article_image">
+<% else %>
+<% end %>
+
+<% if @article.topic2.present? %>
+<h2 class="draft-topic">
+<%= raw(@article.topic2.gsub(/\n/,'<br>') )%>
+</h2>
+<% else %>
+<% end %>
+<% if @article.content2.present? %>
+<p>
+<%= raw(@article.content2.gsub(/\n/,'<br>') )%>
+</p>
+<% else %>
+<% end %>
+<% if @article.img2.present? %>
+<img src="<%= "/article_images/#{@article.img2}" %>" class="article_image">
+<% else %>
+<% end %>
+
+<% if @article.topic3.present? %>
+<h2 class="draft-topic">
+<%= raw(@article.topic3.gsub(/\n/,'<br>') )%>
+</h2>
+<% else %>
+<% end %>
+<% if @article.content3.present? %>
+<p>
+<%= raw(@article.content3.gsub(/\n/,'<br>') )%>
+</p>
+<% else %>
+<% end %>
+<% if @article.img3.present? %>
+<img src="<%= "/article_images/#{@article.img3}" %>" class="article_image">
+<% else %>
+<% end %>
+
+</div>
+
+<div class="button-area">
+<a href="/article/index" class="btn btn-success btn-sm">記事一覧へ</a>
+</div>
+
+<% if @current_user %>
+<div class="button-area">
+	<div class="btn btn-success btn-sm">
+		<%= link_to("編集","/article/#{@article.id}/edit",:style=>"color:white;") %>
+    </div>
+</div>
+<% end %>
+</div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container1">
+ <h3><%= @error_message %></h3>    
+ <h2>管理者ログイン</h2>
+ <div class="shadow p-3 mb-5 bg-white rounded">
+  <%= form_tag("/user/login") do %>
+  <div>
+   <div class="form-group row">
+    <label for="inputTel" class="login-label">電話番号</label>
+    <div class="col-sm-10">
+     <input type="number" name="tel" class="form-control" id="inputTel" placeholder="電話番号" >
+    </div>
+   </div>
+   <div class="form-group row">
+    <label for="inputPassword" class="login-label">パスワード</label>
+    <div class="col-sm-10">
+     <input type="password" name="password" class="form-control" id="inputPassword" placeholder="パスワード">
+   </div>
+  </div>
+  <div class="button-area login">
+   <input type="submit" class="btn btn-success btn-sm" value="ログイン">
+  </div>
+  <% end %>
+ </div>
+</div>

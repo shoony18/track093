@@ -1,0 +1,42 @@
+<%= form_tag("/article/create", {multipart: true}) do %>
+<p>タイトル<textarea class="article_data1" name="title"></textarea></p>
+
+<p>タイトル画像</p>
+<input class="article_data2" name="titleimg" type="file">
+
+<div class="draft-article">
+<p>リード文</p>
+<textarea class="article_data2" name="lead" ></textarea>
+
+<h2 class="draft-topic">トピック1
+<textarea class="article_data1" name="topic1"></textarea>
+</h2>
+<p>記事1</p>
+<textarea class="article_data3" name="content1"></textarea>
+<p>挿入画像1</p>	
+<input class="article_data2" name="img1" type="file">
+
+<h2 class="draft-topic">トピック2
+<textarea class="article_data1" name="topic2"></textarea>
+</h2>
+<p>記事2</p>
+<textarea class="article_data3" name="content2"></textarea>
+<p>挿入画像2</p>	
+<input class="article_data2" name="img2" type="file">
+
+
+<h2 class="draft-topic">トピック3
+<textarea class="article_data1" name="topic3"></textarea>
+</h2>
+<p>記事3</p>
+<textarea class="article_data3" name="content3"></textarea>
+<p>挿入画像3</p>	
+<input class="article_data2" name="img3" type="file">
+
+</div>
+
+<div class="button-area">
+<input type="submit" class="btn btn-success btn-sm" value="アップロード">
+</div>
+
+<% end %>

@@ -1,0 +1,15 @@
+<div class="container1">
+	<h4><%= @error_message %></h4>    
+<h1 class="mypage">管理者ページ</h1>
+
+<div><h5>公開された記事</h5></div>
+<div class="button-area">
+    <a href="/article/new" class="btn btn-warning btn-sm">新規投稿</a>
+</div>
+
+<div class="button-area new">
+	<%= link_to("ログアウト", "/user/logout",{method: :post}) %>
+</div>
+
+
+</div>

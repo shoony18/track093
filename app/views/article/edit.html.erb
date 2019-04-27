@@ -1,0 +1,67 @@
+<%= form_tag("/article/#{@article.id}/update",{multipart: true}) do %>
+<div class = "container2">
+<div class = "container3">
+<p>タイトル
+<textarea class="article_data1" name="title">
+<%= raw(@article.title.gsub(/\n/,'<br>') )%>
+</textarea>
+</p>
+
+<p>タイトル画像</p>
+<input class="article_data2" name="img" type="file">
+
+<div class="draft-article">
+<p>リード文</p>
+<textarea class="article_data2" name="lead" >
+<%= raw(@article.lead.gsub(/\n/,'<br>') )%>
+</textarea>
+
+<h2 class="draft-topic">トピック1
+<textarea class="article_data1" name="topic1">
+<%= raw(@article.topic1.gsub(/\n/,'<br>') )%>
+</textarea>
+</h2>
+<p>記事1</p>
+<textarea class="article_data3" name="content1">
+<%= raw(@article.content1.gsub(/\n/,'<br>') )%>
+</textarea>
+<p>挿入画像1</p>	
+<input class="article_data2" name="img1" type="file">
+
+<h2 class="draft-topic">トピック2
+<textarea class="article_data1" name="topic2">
+<%= raw(@article.topic2.gsub(/\n/,'<br>') )%>
+</textarea>
+</h2>
+<p>記事2</p>
+<textarea class="article_data3" name="content2">
+<%= raw(@article.content2.gsub(/\n/,'<br>') )%>
+</textarea>
+<p>挿入画像2</p>	
+<input class="article_data2" name="img2" type="file">
+
+
+<h2 class="draft-topic">トピック3
+<textarea class="article_data1" name="topic3">
+<%= raw(@article.topic3.gsub(/\n/,'<br>') )%>
+</textarea>
+</h2>
+<p>記事3</p>
+<textarea class="article_data3" name="content3">
+<%= raw(@article.content3.gsub(/\n/,'<br>') )%>
+</textarea>
+<p>挿入画像3</p>	
+<input class="article_data2" name="img3" type="file">
+
+</div>
+
+<div class="button-area">
+<input type="submit" class="btn btn-success btn-sm" value="保存">
+</div>
+<% end %>
+
+<div class="button-area">
+<%= link_to("削除", "/article/#{@article.id}/destroy", {method: "post"}) %>
+</div>
+</div>
+</div>

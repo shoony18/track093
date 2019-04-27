@@ -1,0 +1,28 @@
+<div class="container3">
+<div class="container4">
+<h3 class="article-top">記事一覧</h3>
+<ul class="article-tab-area">
+	<li class="article-tab">短距離</li>
+	<li class="article-tab">長距離</li>
+	<li class="article-tab">跳躍</li>
+	<li class="article-tab">投擲</li>
+</ul>
+
+
+<% @articles.each do |article| %>
+    
+    <%= link_to("/article/#{article.id}") do %>
+    	<h4 class="article-title-area">
+    	<div class="article-title">
+    		<%= article.title %>
+    	</div>
+    	<img class="article-title-img" src="<%= "/article_images/#{article.titleimg}" %>">
+        </h4>
+    <% end %>
+
+<% end %>
+
+<div class="clear"></div>
+
+</div>
+</div>

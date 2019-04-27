@@ -1,0 +1,34 @@
+<div class="container1">
+　<div class="container2">
+      <h1>Learn Sports</h1>
+      <h1>To Enjoy your Life</h1>
+      <br>
+
+        <h5>スポーツに関するニュースや雑学<br>トップ選手の練習方法まで</h5>
+        <h5>あらゆる情報を詰めに詰め込んだ<br>スポーツ専門情報Webサイト</h5>
+      </br>
+      <br>
+      <p><a href="/article/index" class="btn btn-success">記事を読む</a></p>
+      </br>
+  </div>         
+  <div class="container4">
+        <h4>最新の記事</h4> 
+          <% if @articles %>
+          <% @articles.each do |article| %>
+          <%= link_to("/article/#{article.id}") do %>
+          <h4 class="article-title-area">
+            <div class="article-title">
+              <%= article.title %>
+            </div>
+            <img class="article-title-img" src="<%= "/article_images/#{article.titleimg}" %>">
+          </h4>
+          <div class="clear"></div>
+          <% end %>
+          <% end %>
+          <% else %>
+          最新の記事はありません
+          <% end %>
+
+  </div>
+</div>
+

@@ -1,0 +1,35 @@
+*{
+	clear: both;
+}
+
+body{
+	font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
+
+}
+.container1 {
+	text-align: center;
+	padding: 20px 5% 50px 5%;
+	background: -moz-linear-gradient(65deg, #F13F79, #FFC778); 
+	background: -webkit-linear-gradient(65deg, #F13F79, #FFC778); 
+	background: linear-gradient(25deg, #F13F79, #FFC778);
+}
+.container2{
+	color: white;
+	text-shadow: 
+        black 1px 1px 0, black -1px -1px 0,/*右下、左上*/
+        black -1px 1px 0, black 1px -1px 0,/*右上、左下*/
+        black 0px 1px 0, black  0-1px 0,/*右、左*/
+        black -1px 0 0, black 1px 0 0;/*上、下*/
+	
+}
+
+.container3 {
+	text-align: center;
+	padding: 20px 5% 50px 5%;
+	background-color: #FFC778;
+}
+
+.container4{
+	background-color: white;
+	padding: 10px 5% 50px 5%;
+}
