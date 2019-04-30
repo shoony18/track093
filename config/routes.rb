@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
   # get 'user/index' => "user/index"
-  get 'user/new' => "user#new"
   post 'user/create' => "user#create"
   get 'user/:id' => "user#mypage"
   get 'login/form' => "user#form"
   post 'user/logout' => "user#logout"
   post 'user/login' => "user#login"
+  get 'user/new' => "user#new"
   
 
-  get 'article/index' => "article#index"
-  get 'article/:id' => "article#show"
   get 'article/new' => "article#new"
+  get 'article/:id' => "article#show"
+  get 'article/index' => "article#index"
   post 'article/create' => "article#create"
   post 'article/:id/update' => "article#update"
   get 'article/:id/edit' => "article#edit"

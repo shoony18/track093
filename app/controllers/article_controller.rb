@@ -1,4 +1,6 @@
 class ArticleController < ApplicationController
+  before_action :authenticate_user
+  # before_action :ensure_correct_user, {only:[:edit,:update,:destroy]}
 
   def new
     @article = Article.new
@@ -117,7 +119,8 @@ class ArticleController < ApplicationController
     @article = Article.find_by(id: params[:id])
     @article.destroy
     redirect_to("/article/index")
-    
   end
+
+  
 
 end
