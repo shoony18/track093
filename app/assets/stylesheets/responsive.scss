@@ -1,7 +1,7 @@
 /*タブレット向けレイアウト 
-@media all and (max-width: 1500px) {
-  .contain{
-    width: 70%;
+@media all and (min-width: 1000px) {
+  .container1{
+    width: 999px;
   }
 
   

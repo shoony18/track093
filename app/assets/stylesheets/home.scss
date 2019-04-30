@@ -4,17 +4,21 @@
 
 body{
 	font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
-}
-
-
-
-.container1 {
-	text-align: center;
-	padding: 5% 5% 50px 5%;
 	background: -moz-linear-gradient(65deg, #F13F79, #FFC778); 
 	background: -webkit-linear-gradient(65deg, #F13F79, #FFC778); 
 	background: linear-gradient(25deg, #F13F79, #FFC778);
-	font-size: 70px;
+}
+
+
+.container0{
+	text-align: center;
+}
+.container1 {
+	display: inline-block;
+	max-width: 1000px;
+	text-align: center;
+	padding: 5% 2% 5% 2%;
+	
 	
 }
 .container2{
