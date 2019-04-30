@@ -159,39 +159,47 @@ body {
   font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
 }
 
+/* line 9, /Users/karitashuhei/new_app/track094/app/assets/stylesheets/home.scss */
+img {
+  width: 50%;
+  height: 50%;
+}
+
 /* line 14, /Users/karitashuhei/new_app/track094/app/assets/stylesheets/home.scss */
 .container1 {
   text-align: center;
-  padding: 10% 5% 50px 5%;
+  padding: 5% 5% 50px 5%;
   background: -moz-linear-gradient(65deg, #F13F79, #FFC778);
   background: -webkit-linear-gradient(65deg, #F13F79, #FFC778);
   background: linear-gradient(25deg, #F13F79, #FFC778);
+  font-size: 30px;
+  height: 2000px;
 }
 
-/* line 21, /Users/karitashuhei/new_app/track094/app/assets/stylesheets/home.scss */
+/* line 23, /Users/karitashuhei/new_app/track094/app/assets/stylesheets/home.scss */
 .container2 {
   color: white;
   margin-bottom: 10%;
 }
 
-/* line 27, /Users/karitashuhei/new_app/track094/app/assets/stylesheets/home.scss */
+/* line 29, /Users/karitashuhei/new_app/track094/app/assets/stylesheets/home.scss */
 .container3 {
   text-align: center;
   padding: 20px 5% 50px 5%;
   background-color: #FFC778;
 }
 
-/* line 33, /Users/karitashuhei/new_app/track094/app/assets/stylesheets/home.scss */
+/* line 35, /Users/karitashuhei/new_app/track094/app/assets/stylesheets/home.scss */
 .container4 {
   background-color: white;
-  padding: 10px 5% 50px 5%;
-  margin-top: 30%;
+  padding: 0px 5% 50px 5%;
+  margin-top: 0%;
 }
 
-/* line 39, /Users/karitashuhei/new_app/track094/app/assets/stylesheets/home.scss */
+/* line 41, /Users/karitashuhei/new_app/track094/app/assets/stylesheets/home.scss */
 .top_title_sentence {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 @charset "UTF-8";
 /*タブレット向けレイアウト 
