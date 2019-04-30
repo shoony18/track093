@@ -4,14 +4,13 @@
 
 body{
 	font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
-	background: -moz-linear-gradient(65deg, #F13F79, #FFC778); 
-	background: -webkit-linear-gradient(65deg, #F13F79, #FFC778); 
-	background: linear-gradient(25deg, #F13F79, #FFC778);
 }
 
 
 .container0{
 	text-align: center;
+	background-color:  #ffb278; 
+
 }
 .container1 {
 	display: inline-block;
@@ -37,7 +36,7 @@ body{
 	background-color: white;
 	padding: 10px 5% 50px 5%;
 	margin-top: 0%;
-	
+	font-size: 30px;
 }
 
 .top_title_sentence{

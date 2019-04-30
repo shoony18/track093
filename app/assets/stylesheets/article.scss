@@ -1,6 +1,6 @@
 .article-top {
   padding-top: 30px;
-  color: #7b6459;
+  color: #ffb278;
   /*文字色*/
 }
 
@@ -10,7 +10,7 @@
 
 .article-tab {
   display: inline-block;
-  background-color: #FFEEDC;
+  background-color: #ffb278;
   padding: 0 5px 0 5px;
   border-radius: 5px;
 }
@@ -38,7 +38,7 @@
   width: 48%;
   height: 300px;
   float: left;
-  background-color: #FFEEDC;
+  background-color: #ffb278;
   &:hover {
     box-shadow: 0 10px 15px -5px gray,0 0 5px gray;
     /*浮いた時の影*/
@@ -69,10 +69,9 @@
 
 .draft-topic {
   position: relative;
-  background: #FFEEDC;
+  background: #ea7925;
   padding: 2px 5px 2px 40px;
-  font-size: 20px;
-  color: #474747;
+  color: white;
   border-radius: 0 10px 10px 0;
   text-align: left;
   &:before {

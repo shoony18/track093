@@ -18,9 +18,9 @@
 <% end %>
 
 <% if @article.topic1.present? %>
-<h2 class="draft-topic">
+<div class="draft-topic">
 <%= raw(@article.topic1.gsub(/\n/,'<br>') )%>
-</h2>
+</div>
 <% else %>
 <% end %>
 <% if @article.content1.present? %>
@@ -35,9 +35,9 @@
 <% end %>
 
 <% if @article.topic2.present? %>
-<h2 class="draft-topic">
+<div class="draft-topic">
 <%= raw(@article.topic2.gsub(/\n/,'<br>') )%>
-</h2>
+</div>
 <% else %>
 <% end %>
 <% if @article.content2.present? %>
@@ -52,9 +52,9 @@
 <% end %>
 
 <% if @article.topic3.present? %>
-<h2 class="draft-topic">
+<div class="draft-topic">
 <%= raw(@article.topic3.gsub(/\n/,'<br>') )%>
-</h2>
+</div>
 <% else %>
 <% end %>
 <% if @article.content3.present? %>
@@ -71,13 +71,13 @@
 </div>
 
 <div class="button-area">
-<a href="/article/index" class="btn btn-success btn-sm">記事一覧へ</a>
+<a href="/article/index" class="btn btn-success btn-sm" style="font-size:30px;">記事一覧へ</a>
 </div>
 
 <% if @current_user %>
 <div class="button-area">
 	<div class="btn btn-success btn-sm">
-		<%= link_to("編集","/article/#{@article.id}/edit",:style=>"color:white;") %>
+		<%= link_to("編集","/article/#{@article.id}/edit",:style=>"color:white; font-size:30px;") %>
     </div>
 </div>
 <% end %>
