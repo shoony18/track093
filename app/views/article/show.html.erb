@@ -5,10 +5,12 @@
 <% else %>
 <% end %>
 
+<div style="text-align: center;">
 <% if @article.titleimg.present? %>
 <img src="<%= "/article_images/#{@article.titleimg}" %>" class="article_image">
 <% else %>
 <% end %>
+</div>
 
 <div class="draft-article">
 
