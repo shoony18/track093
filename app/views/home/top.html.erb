@@ -4,29 +4,24 @@
 　　　　 <div class="top_title_sentence" style="width: 100%; font-size: 50px;">
          アスリートのための<br>スポーツ情報Webメディア<br>"track"</div><br>
         <div class="top_title_sentence" style="width: 100%; font-size: 50px;">スポーツに関する<br>ニュースや雑学
-        <br>トップ選手の<br>練習方法まで<br>幅広い情報を掲載</div>
+        <br>トップ選手の<br>練習方法まで<br>幅広い記事を掲載</div>
         
        <br><a href="/article/index" class="btn btn-success" style="width: 100%; font-size: 50px;">記事を読む</a>
       
   </div>         
   <div class="container4">
-        <h4 style="font-size: 40px;">最新の記事</h4> 
-          <% if @articles %>
+        <h4 style="font-size: 40px;">最新の記事</h4>        
           <% @articles.each do |article| %>
-          <%= link_to("/article/#{article.id}") do %>
+          <%= link_to("/article/#{article.id}",:style=>"text-decoration: none;") do %>
           <h4 class="article-title-area">
-            <div class="article-title">
-              <%= article.title %>
-            </div>
-            <img class="article-title-img" src="<%= "/article_images/#{article.titleimg}" %>">
+          <div class="article-title">
+           <%= article.title %>
+          </div>
+          <img class="article-title-img" src="<%= "/article_images/#{article.titleimg}" %>">
           </h4>
+          <% end %>
+          <% end %>
           <div class="clear"></div>
-          <% end %>
-          <% end %>
-          <% else %>
-          最新の記事はありません
-          <% end %>
-
   </div>
 </div>
 

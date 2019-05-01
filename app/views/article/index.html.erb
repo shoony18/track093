@@ -1,16 +1,16 @@
 <div class="container1">
 <div class="container4">
 <h3 class="article-top">記事一覧</h3>
-<ul class="article-tab-area">
+<!-- <ul class="article-tab-area"> 
 	<li class="article-tab">短距離</li>
 	<li class="article-tab">長距離</li>
 	<li class="article-tab">跳躍</li>
 	<li class="article-tab">投擲</li>
-</ul>
+</ul>-->
 
 　<% @articles.each do |article| %>
     
-    <%= link_to("/article/#{article.id}") do %>
+    <%= link_to("/article/#{article.id}",:style=>"text-decoration: none;") do %>
     	<h4 class="article-title-area">
     	<div class="article-title">
     		<%= article.title %>
