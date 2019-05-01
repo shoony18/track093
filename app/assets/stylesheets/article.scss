@@ -22,8 +22,7 @@
 }
 
 .article_image {
-  display: block;
-  margin-left: 25%;
+  display: inline-block;
   width: 50%;
   height: 50%;
 }
@@ -34,9 +33,10 @@
   background-color: white;
   color: black;
   padding: 1%;
-  margin: 1%;
-  width: 40%;
+  margin: 2% ;
+  width: 45%;
   height: 300px;
+  vertical-align: top;
   display: inline-block;
   background-color: #ffb278;
   &:hover {
@@ -54,10 +54,10 @@
 .article-title {
   padding-bottom: 5px;
   border-bottom: double 5px #ea7925;
+
 }
 
 .article-title-img {
-  display: block;
   margin-top: 20px;
   width: 100%;
   height: 70%;
@@ -70,6 +70,7 @@
 .draft-topic {
   position: relative;
   background: #ea7925;
+  margin-top: 30px;
   padding: 2px 5px 2px 40px;
   color: white;
   border-radius: 0 10px 10px 0;

@@ -11,33 +11,35 @@
   </head>
 
   <body>
+  <header>
   <nav class="navbar navbar-expand-lg navbar-light " style="background-color: white;"> 
   <a class="navbar-brand" href="/" >
     <%= image_tag "/track_logo.png", :style => "height:80px;" "width:200px;" %>
     </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="height: 70px; width: 70px;">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right;">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <div class="nav-link"><%= link_to("記事", "/article/index",:style=>"color:#FFC778; font-size:30px; text-decoration: none;") %>
+        <div class="nav-link"><%= link_to("記事", "/article/index",:style=>"color:#ea7925; font-size:30px; text-decoration: none;") %>
         </div>
       </li>
       <li class="nav-item">
-        <div class="nav-link"><%= link_to("練習メニュー", "/menue/index",:style=>"color:#FFC778; font-size:30px; text-decoration: none;")%>
+        <div class="nav-link"><%= link_to("練習メニュー", "/menue/index",:style=>"color:#ea7925; font-size:30px; text-decoration: none;")%>
         </div>
       </li>
       <% if @current_user %>
       <li class="nav-item">
-        <div class="nav-link"><%= link_to("マイページ", "/user/#{@current_user.id}" ,:style=>"color:#FFC778; font-size:30px; text-decoration: none;") %>
+        <div class="nav-link"><%= link_to("マイページ", "/user/#{@current_user.id}" ,:style=>"color:#ea7925; font-size:30px; text-decoration: none;") %>
         </div>
       </li>
       <% end %>  
     </ul>
   </div>
   </nav>
+  </header>
   <div class="container0">
     <%= yield %>
   </div>

@@ -10,9 +10,9 @@
       
   </div>         
   <div class="container4">
-        <h4 style="font-size: 40px;">最新の記事</h4>        
+        <h4 style="font-size: 40px; text-align: center;">最新の記事</h4>        
           <% @articles.each do |article| %>
-          <%= link_to("/article/#{article.id}",:style=>"text-decoration: none; text-align: left;") do %>
+          <%= link_to("/article/#{article.id}",:style=>"text-decoration: none;") do %>
           <h4 class="article-title-area">
           <div class="article-title">
            <%= article.title %>

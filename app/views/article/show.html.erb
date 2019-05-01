@@ -29,10 +29,12 @@
 </p>
 <% else %>
 <% end %>
+<div style="text-align: center;">
 <% if @article.img1.present? %>
-<img src="<%= "/article_images/#{@article.img1}" %>" class="article_image">
+<img src="<%= "/article_images/#{@article.img1}" %>" class="article_image" >
 <% else %>
 <% end %>
+</div>
 
 <% if @article.topic2.present? %>
 <div class="draft-topic">
@@ -46,10 +48,12 @@
 </p>
 <% else %>
 <% end %>
+<div style="text-align: center;">
 <% if @article.img2.present? %>
 <img src="<%= "/article_images/#{@article.img2}" %>" class="article_image">
 <% else %>
 <% end %>
+</div>
 
 <% if @article.topic3.present? %>
 <div class="draft-topic">
@@ -63,10 +67,12 @@
 </p>
 <% else %>
 <% end %>
+<div style="text-align: center;">
 <% if @article.img3.present? %>
 <img src="<%= "/article_images/#{@article.img3}" %>" class="article_image">
 <% else %>
 <% end %>
+</div>
 
 </div>
 
