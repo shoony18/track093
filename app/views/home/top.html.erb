@@ -1,22 +1,23 @@
 <div class="container1">
 　<div class="container2">
       
-　　　　 <div class="top_title_sentence" style="width: 100%; font-size: 4rem; font-family: 'TsukuBRdGothic-Regular','ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;">
+　　　　 <div class="top_title_sentence" style="width: 100%; font-size: 5rem; font-weight: bold;">
          アスリートのための<br>スポーツ情報Webメディア<br>"track"</div><br>
-        <div class="top_title_sentence" style="width: 100%; font-size: 2rem;">スポーツに関するニュースや雑学
+        <div class="top_title_sentence" style="width: 100%; font-size: 2.5rem;">スポーツに関するニュースや雑学
         <br>トップ選手の練習方法まで<br>幅広い記事を掲載</div>
         
-       <br><a href="/article/index" class="btn btn-success" style="width: 100%; font-size: 4rem;">記事を読む</a>
+       <br><a href="/article/index" class="btn btn-success" style="width: 100%; font-size: 5rem;">記事を読む</a>
       
   </div>         
   <div class="container4">
-        <h4 style="font-size: 4rem; text-align: center;">最新の記事</h4>        
+        <h4 style="font-size: 5rem; text-align: center;">最新の記事</h4>        
           <% @articles.each do |article| %>
           <%= link_to("/article/#{article.id}",:style=>"text-decoration: none;") do %>
           <h4 class="article-title-area">
           <div class="article-title">
            <%= article.title %>
           </div>
+          
           <img class="article-title-img" src="<%= "/article_images/#{article.titleimg}" %>">
           </h4>
           <% end %>

@@ -8,10 +8,11 @@
 }
 
 /* スマホ向けレイアウト */
-@media all and (max-width: 700px) {
+@media all and (max-width: 720px) {
 
   .article-title-area {
     width: 95%;
+    margin-left: 2.5%;
   }
 
   .btn {

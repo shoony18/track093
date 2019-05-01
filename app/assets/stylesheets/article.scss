@@ -32,10 +32,10 @@
   text-align: left;
   background-color: white;
   color: black;
-  padding: 1%;
-  margin: 2% ;
-  width: 45.5%;
-  height: 300px;
+  padding: 1% ;
+  margin: 3% 0.7% 3% 0.7% ;
+  width: 48%;
+  height: 350px;
   vertical-align: top;
   display: inline-block;
   background-color: #ffb278;
@@ -55,7 +55,7 @@
   padding-bottom: 5px;
   border-bottom: double 5px #ea7925;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 3rem;
 
 }
 
@@ -66,9 +66,12 @@
 }
 
 .draft-area {
-  padding-bottom: 30px;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
   text-align: center;
-  font-size: 4rem;
+  font-size: 4.5rem;
+  font-weight: bold;
+  border-bottom: double 5px #ea7925;
 }
 
 .draft-topic {
@@ -77,7 +80,8 @@
   color: #494949;/*文字色*/
   background: #f9e7cc;/*背景色*/
   border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
-  font-size: 3vw;
+  font-size: 4vw;
+  font-weight: bold;
 }
 
 .draft-article {
