@@ -2,7 +2,7 @@
 <div class = "container2">
 <div class = "container3">
 <p>タイトル
-<textarea class="article_data1" name="title"><%= raw(@article.title.gsub(/\n/,'<br>') )%></textarea>
+<textarea class="article_data1" name="title"><%= @article.title %></textarea>
 </p>
 
 <p>タイトル画像</p>
@@ -10,30 +10,30 @@
 
 <div class="draft-article">
 <p>リード文</p>
-<textarea class="article_data2" name="lead" ><%= raw(@article.lead.gsub(/\n/,'<br>') )%></textarea>
+<textarea class="article_data2" name="lead" ><%= @article.lead%></textarea>
 
 <h2 class="draft-topic">トピック1
-<textarea class="article_data1" name="topic1"><%= raw(@article.topic1.gsub(/\n/,'<br>') )%></textarea>
+<textarea class="article_data1" name="topic1"><%= @article.topic1%></textarea>
 </h2>
 <p>記事1</p>
-<textarea class="article_data3" name="content1"><%= raw(@article.content1.gsub(/\n/,'<br>') )%></textarea>
+<textarea class="article_data3" name="content1"><%= @article.content1%></textarea>
 <p>挿入画像1</p>	
 <input class="article_data2" name="img1" type="file">
 
 <h2 class="draft-topic">トピック2
-<textarea class="article_data1" name="topic2"><%= raw(@article.topic2.gsub(/\n/,'<br>') )%></textarea>
+<textarea class="article_data1" name="topic2"><%= @article.topic2%></textarea>
 </h2>
 <p>記事2</p>
-<textarea class="article_data3" name="content2"><%= raw(@article.content2.gsub(/\n/,'<br>') )%></textarea>
+<textarea class="article_data3" name="content2"><%= @article.content2%></textarea>
 <p>挿入画像2</p>	
 <input class="article_data2" name="img2" type="file">
 
 
 <h2 class="draft-topic">トピック3
-<textarea class="article_data1" name="topic3"><%= raw(@article.topic3.gsub(/\n/,'<br>') )%></textarea>
+<textarea class="article_data1" name="topic3"><%= @article.topic3%></textarea>
 </h2>
 <p>記事3</p>
-<textarea class="article_data3" name="content3"><%= raw(@article.content3.gsub(/\n/,'<br>') )%></textarea>
+<textarea class="article_data3" name="content3"><%= @article.content3%></textarea>
 <p>挿入画像3</p>	
 <input class="article_data2" name="img3" type="file">
 
