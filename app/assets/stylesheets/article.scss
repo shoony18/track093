@@ -28,6 +28,7 @@
 }
 
 .article-title-area {
+  border-radius: 1rem;
   box-shadow: 0 2px 2px gray;
   text-align: left;
   background-color: white;
@@ -38,7 +39,6 @@
   height: 410px;
   vertical-align: top;
   display: inline-block;
-  background-color: #ffb278;
   &:hover {
     box-shadow: 0 10px 15px -5px gray,0 0 5px gray;
     /*浮いた時の影*/
