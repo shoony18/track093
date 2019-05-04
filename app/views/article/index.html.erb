@@ -9,7 +9,7 @@
 　<div class="container4">
         <h4 style="font-size: 4vw; text-align: center;">記事一覧</h4>        
           <div>
-          <% @articles.last(6).reverse_each do |article| %>
+          <% @articles.reverse_each do |article| %>
           <%= link_to("/article/#{article.id}",:style=>"text-decoration: none;") do %>
           <h4 class="article-title-area">
           <div class="article-title">
