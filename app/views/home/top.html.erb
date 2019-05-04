@@ -16,6 +16,20 @@
           <h4 class="article-title-area">
           <div class="article-title">
            <%= article.title %>
+           <% case article.genre
+            when "track" %>
+            <div class="genre track">陸上</div>
+            <% when "baseball" %>
+            <div class="genre baseball">野球</div>
+            <% when "soccer" %>
+            <div class="genre soccer">サッカー</div>
+            <% when "tennis" %>
+            <div class="genre tennis">テニス</div>
+            <% when "tabletennis" %>
+            <div class="genre tabletennis">卓球</div>
+            <% when "amefoot" %>
+            <div class="genre amefoot">アメフト</div>
+            <% end %>
           </div>
           
           <img class="article-title-img" src="<%= "/article_images/#{article.titleimg}" %>">

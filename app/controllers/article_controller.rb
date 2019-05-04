@@ -11,6 +11,7 @@ class ArticleController < ApplicationController
 
   	@article = Article.new(
       title: params[:title],
+      genre: params[:genre],
       lead: params[:lead],
       topic1: params[:topic1],
       content1: params[:content1],
@@ -74,6 +75,7 @@ class ArticleController < ApplicationController
    
 
     @article.title = params[:title]
+    @article.genre = params[:genre]
     @article.lead = params[:lead]
     @article.topic1 = params[:topic1]
     @article.content1 = params[:content1]

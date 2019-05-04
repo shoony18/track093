@@ -35,7 +35,7 @@
   padding: 1% ;
   margin: 3% 0.7% 3% 0.7% ;
   width: 48%;
-  height: 350px;
+  height: 410px;
   vertical-align: top;
   display: inline-block;
   background-color: #ffb278;
@@ -56,7 +56,40 @@
   border-bottom: double 5px #ea7925;
   font-weight: bold;
   font-size: 3rem;
+}
 
+.genre{
+  border-radius: 1em;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1px 0;
+  width: 80px;
+  height: 20px;
+}
+
+.track{
+  background-color: #ff8e8e;
+}
+
+.baseball{
+  background-color: #f2ad0c;  
+}
+
+.soccer{
+  background-color: #70a6ff;
+}
+
+.tennis{
+  background-color: #a4eb84;
+}
+
+.tabletennis{
+  background-color: #a58eff;
+}
+
+.amefoot{
+  background-color: #ffa08e;
 }
 
 .article-title-img {
@@ -113,3 +146,4 @@
   margin-top: 20px;
   text-align: center;
 }
+
