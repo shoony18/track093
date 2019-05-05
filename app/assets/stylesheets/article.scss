@@ -36,7 +36,7 @@
   padding: 1% ;
   margin: 3% 0.7% 3% 0.7% ;
   width: 48%;
-  height: 410px;
+  height: 430px;
   vertical-align: top;
   display: inline-block;
   &:hover {
@@ -53,12 +53,11 @@
 
 .new_article{
   color: black;
-  font-size: 1.5rem;
   padding: 10px 0;
   margin-left: 30%;
   margin-right: 30%;
-  height: 80px;
-  font-size: 5rem; 
+  height: 70px;
+  font-size: 4rem; 
   text-align: center;
   border-bottom: double 5px #ea7925;
 }
@@ -67,7 +66,7 @@
   padding-bottom: 5px;
   border-bottom: double 5px #ea7925;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .genre{
@@ -110,26 +109,26 @@
   height: 70%;
 }
 
-.draft-area {
+.show-article-title-area {
   padding-bottom: 5px;
   margin-bottom: 30px;
   text-align: center;
-  font-size: 4.5rem;
+  font-size: 3rem;
   font-weight: bold;
   border-bottom: double 5px #ea7925;
 }
 
-.draft-topic {
+.article-topic {
   margin-top: 50px;
   padding: 0.5em;/*文字周りの余白*/
   color: #494949;/*文字色*/
   background: #f9e7cc;/*背景色*/
   border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
-  font-size: 4vw;
+  font-size: 3rem;
   font-weight: bold;
 }
 
-.draft-article {
+.show-article {
   text-align: left;
   padding-top: 50px;
 }

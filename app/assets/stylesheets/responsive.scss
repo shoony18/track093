@@ -1,13 +1,33 @@
-/*タブレット向けレイアウト 
-@media all and (min-width: 1000px) {
-  .container1{
-    width: 999px;
+/*スマホ向けレイアウト  */
+@media all and (max-width: 420px) {
+  .container4{
+    font-size: 3rem;
+  }
+
+  .top_title_sentence{
+    font-size: 5rem;
+  }
+  .show-article-title-area{
+    font-size: 4rem;
+  }
+
+  .header{
+    height: 100px;
+  }
+
+  .article-title{
+    font-size: 3rem;
+  }
+
+  .new_article{
+    font-size: 5rem;
+    height: 80px;
   }
 
   
 }
 
-/* スマホ向けレイアウト */
+/* web */
 @media all and (max-width: 720px) {
 
   .article-title-area {
