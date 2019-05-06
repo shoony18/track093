@@ -5,7 +5,7 @@
 }
 
 .article-tab-area {
-  padding: 0;
+
 }
 
 .article-tab {
@@ -69,7 +69,20 @@
   font-size: 1.5rem;
 }
 
-.genre{
+.genre0{
+  border-radius: 1em;
+  text-align: center;
+  color: white;
+  margin: 5px;
+  font-size: 1.5rem;
+  padding: 3.5px 0;
+  width: 80px;
+  height: 30px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.genre1{
   border-radius: 1em;
   text-align: center;
   color: white;

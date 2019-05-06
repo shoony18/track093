@@ -17,17 +17,17 @@
           <div class="article-title">
            <%= article.title %>
            <% case article.genre when "track" %>
-            <div class="genre track">陸上</div>
+            <div class="genre1 track">陸上</div>
             <% when "baseball" %>
-            <div class="genre baseball">野球</div>
+            <div class="genre1 baseball">野球</div>
             <% when "soccer" %>
-            <div class="genre soccer">サッカー</div>
+            <div class="genre1 soccer">サッカー</div>
             <% when "tennis" %>
-            <div class="genre tennis">テニス</div>
+            <div class="genre1 tennis">テニス</div>
             <% when "tabletennis" %>
-            <div class="genre tabletennis">卓球</div>
+            <div class="genre1 tabletennis">卓球</div>
             <% when "amefoot" %>
-            <div class="genre amefoot">アメフト</div>
+            <div class="genre1 amefoot">アメフト</div>
             <% end %>
           </div>          
           <img class="article-title-img" src="<%= "/article_images/#{article.titleimg}" %>">

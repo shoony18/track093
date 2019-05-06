@@ -59,7 +59,15 @@ class ArticleController < ApplicationController
 
   def index
     @articles = Article.all
+    @genicons = Article.select(:genre).distinct
   end
+
+  def genre
+    @genArticles = Article.where(genre: params[:genre])
+    @articles = Article.all
+    @genicons = Article.all
+  end
+
 
   def show
   	@article = Article.find_by(id: params[:id])

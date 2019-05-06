@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   post 'user/logout' => "user#logout"
   post 'user/login' => "user#login"
   
-
   get 'article/new' => "article#new"
   get 'article/index' => "article#index"
+  get 'article/genre/:genre' => "article#genre"
   get 'article/:id' => "article#show"
   post 'article/create' => "article#create"
   post 'article/:id/update' => "article#update"

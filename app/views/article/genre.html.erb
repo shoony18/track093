@@ -1,10 +1,9 @@
 <div class="container1">
 <div class="container4">
 <h4 style="font-size: 2rem; text-align: center; font-weight: bold;">記事一覧</h4>
-
 <ul class="article-tab-area">
   <% @genicons.each do |genicon| %> 
-	<li class="genre0">
+  <li class="genre0">
     <%= link_to("/article/genre/#{genicon.genre}",:style=>"text-decoration: none;") do %>
     <% case genicon.genre
             when "track" %>
@@ -23,30 +22,31 @@
     <% end %>
     <% end %>
   </li>
-	
+  
 </ul>
-     <div>
-          <% @articles.reverse_each do |article| %>
-          <%= link_to("/article/#{article.id}",:style=>"text-decoration: none;") do %>
+      
+          <div>
+          <% @genArticles.reverse_each do |genArticle| %>
+          <%= link_to("/article/#{genArticle.id}",:style=>"text-decoration: none;") do %>
           <h4 class="article-title-area">
           <div class="article-title">
-           <%= article.title %>
-           <% case article.genre
+           <%= genArticle.title %>
+           <% case genArticle.genre
             when "track" %>
-            <div class="genre1 track">陸上</div>
+            <div class="genre track">陸上</div>
             <% when "baseball" %>
-            <div class="genre1 baseball">野球</div>
+            <div class="genre baseball">野球</div>
             <% when "soccer" %>
-            <div class="genre1 soccer">サッカー</div>
+            <div class="genre soccer">サッカー</div>
             <% when "tennis" %>
-            <div class="genre1 tennis">テニス</div>
+            <div class="genre tennis">テニス</div>
             <% when "tabletennis" %>
-            <div class="genre1 tabletennis">卓球</div>
+            <div class="genre tabletennis">卓球</div>
             <% when "amefoot" %>
-            <div class="genre1 amefoot">アメフト</div>
+            <div class="genre amefoot">アメフト</div>
             <% end %>
           </div>
-          <img class="article-title-img" src="<%= "/article_images/#{article.titleimg}" %>">
+          <img class="article-title-img" src="<%= "/article_images/#{genArticle.titleimg}" %>">
           </h4>
           <% end %>
           <% end %>
@@ -56,3 +56,4 @@
 
 <div class="clear"></div>
 
+</div>
