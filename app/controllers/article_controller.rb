@@ -58,12 +58,12 @@ class ArticleController < ApplicationController
   end
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order(id: :asc)
     @genicons = Article.select(:genre).distinct
   end
 
   def genre
-    @genArticles = Article.where(genre: params[:genre])
+    @genArticles = Article.where(genre: params[:genre]).order(id: :asc)
     @articles = Article.all
     @genicons = Article.select(:genre).distinct
   end
