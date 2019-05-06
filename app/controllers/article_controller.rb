@@ -65,7 +65,7 @@ class ArticleController < ApplicationController
   def genre
     @genArticles = Article.where(genre: params[:genre])
     @articles = Article.all
-    @genicons = Article.all
+    @genicons = Article.select(:genre).distinct
   end
 
 
