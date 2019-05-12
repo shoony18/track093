@@ -1,12 +1,12 @@
 <div class="container1">
 　<div class="container2">
       
-　　　　 <div class="top_title_sentence" style="width: 100%; font-size: 2.8rem; font-weight: bold;">
-         アスリートのための<br>スポーツ情報Webメディア<br>"track"</div><br>
-        <div class="top_title_sentence" style="width: 100%; font-size: 2rem;">スポーツに関するニュースや雑学
-        <br>トップ選手の練習方法まで<br>幅広い記事を掲載</div>
+　　　　 <div class="top_title_sentence" style="font-weight: bold;">
+         明日にでも成功をおさめたい人のための<br>自己啓発Webメディア<br>ShooLight</div>
+        <div class="top_title_sentence" >-あらゆるジャンルの成功者から学ぶ-
+        </div>
         
-       <br><a href="/article/index" class="btn btn-success" style="width: 100%; font-size: 3rem;">記事を読む</a>
+       <br><a href="/article/index" class="btn btn-success" style="width: 100%; font-size: 2rem;">記事を読む</a>
       
   </div>         
   <div class="container4">
@@ -16,21 +16,28 @@
           <h4 class="article-title-area">
           <div class="article-title">
            <%= article.title %>
-           <% case article.genre when "track" %>
-            <div class="genre1 track">陸上</div>
-            <% when "baseball" %>
-            <div class="genre1 baseball">野球</div>
-            <% when "soccer" %>
-            <div class="genre1 soccer">サッカー</div>
-            <% when "tennis" %>
-            <div class="genre1 tennis">テニス</div>
-            <% when "tabletennis" %>
-            <div class="genre1 tabletennis">卓球</div>
-            <% when "amefoot" %>
-            <div class="genre1 amefoot">アメフト</div>
+           <% case article.genre
+            when "business" %>
+            <div class="genre1 business">実業家</div>
+            <% when "athlete" %>
+            <div class="genre1 athlete">アスリート</div>
+            <% when "art" %>
+            <div class="genre1 art">芸術</div>
+            <% when "politics" %>
+            <div class="genre1 politics">政治</div>
+            <% when "society" %>
+            <div class="genre1 society">社会</div>
+            <% when "philosophy" %>
+            <div class="genre1 philosophy">哲学</div>
+            <% when "education" %>
+            <div class="genre1 education">教育</div>
             <% end %>
-          </div>          
-          <img class="article-title-img" src="<%= "/article_images/#{article.titleimg}" %>">
+          </div>
+          <div class="video">
+          <iframe width="150" height="100" src="<%= article.youtube %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
+          </div>
+          <!-- <img class="article-title-img" src="< "/article_images/#{article.titleimg}" %>"> -->
           </h4>
           <% end %>
           <% end %>

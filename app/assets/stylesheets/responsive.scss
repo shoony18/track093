@@ -1,11 +1,11 @@
 /*スマホ向けレイアウト  */
-@media all and (min-width: 650px) {
+@media all and (min-width: 480px) {
   
   .top_title_sentence{
-    font-size: 5rem;
+    font-size: 3rem;
   }
   .show-article-title-area{
-    font-size: 4rem;
+    font-size: 2rem;
   }
 
 
@@ -21,6 +21,24 @@
     font-size: 3rem;
     height: 50px;
   }
+
+  iframe{
+    width: 300px;
+    height: 150px;
+
+  }
+
+  .show-button-area{
+    position: absolute; 
+    top: 500px; 
+    left: 35%; 
+    width: 30%;
+  }
+
+  .show-button-text{
+    font-size:3rem;
+  }
+
 
   
 }

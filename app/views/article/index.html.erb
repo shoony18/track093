@@ -7,18 +7,20 @@
 	<li class="genre0">
     <%= link_to("/article/genre/#{genicon.genre}",:style=>"text-decoration: none;") do %>
     <% case genicon.genre
-            when "track" %>
-            <div class="genre0 track">陸上</div>
-            <% when "baseball" %>
-            <div class="genre0 baseball">野球</div>
-            <% when "soccer" %>
-            <div class="genre0 soccer">サッカー</div>
-            <% when "tennis" %>
-            <div class="genre0 tennis">テニス</div>
-            <% when "tabletennis" %>
-            <div class="genre0 tabletennis">卓球</div>
-            <% when "amefoot" %>
-            <div class="genre0 amefoot">アメフト</div>
+            when "business" %>
+            <div class="genre0 business">実業家</div>
+            <% when "athlete" %>
+            <div class="genre0 athlete">アスリート</div>
+            <% when "art" %>
+            <div class="genre0 art">芸術</div>
+            <% when "politics" %>
+            <div class="genre0 politics">政治</div>
+            <% when "society" %>
+            <div class="genre0 society">社会</div>
+            <% when "philosophy" %>
+            <div class="genre0 philosophy">哲学</div>
+            <% when "education" %>
+            <div class="genre0 education">教育</div>
             <% end %>
     <% end %>
     <% end %>
@@ -32,21 +34,27 @@
           <div class="article-title">
            <%= article.title %>
            <% case article.genre
-            when "track" %>
-            <div class="genre1 track">陸上</div>
-            <% when "baseball" %>
-            <div class="genre1 baseball">野球</div>
-            <% when "soccer" %>
-            <div class="genre1 soccer">サッカー</div>
-            <% when "tennis" %>
-            <div class="genre1 tennis">テニス</div>
-            <% when "tabletennis" %>
-            <div class="genre1 tabletennis">卓球</div>
-            <% when "amefoot" %>
-            <div class="genre1 amefoot">アメフト</div>
+            when "business" %>
+            <div class="genre1 business">実業家</div>
+            <% when "athlete" %>
+            <div class="genre1 athlete">アスリート</div>
+            <% when "art" %>
+            <div class="genre1 art">芸術</div>
+            <% when "politics" %>
+            <div class="genre1 politics">政治</div>
+            <% when "society" %>
+            <div class="genre1 society">社会</div>
+            <% when "philosophy" %>
+            <div class="genre1 philosophy">哲学</div>
+            <% when "education" %>
+            <div class="genre1 education">教育</div>
             <% end %>
           </div>
-          <img class="article-title-img" src="<%= "/article_images/#{article.titleimg}" %>">
+          <div class="video">
+          <iframe src="<%= article.youtube %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
+          </div>
+          <!-- <img class="article-title-img" src="< "/article_images/#{article.titleimg}" %>"> -->
           </h4>
           <% end %>
           <% end %>

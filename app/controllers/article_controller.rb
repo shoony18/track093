@@ -13,6 +13,7 @@ class ArticleController < ApplicationController
       title: params[:title],
       genre: params[:genre],
       lead: params[:lead],
+      youtube: params[:youtube],
       topic1: params[:topic1],
       content1: params[:content1],
       topic2: params[:topic2],
@@ -85,6 +86,7 @@ class ArticleController < ApplicationController
     @article.title = params[:title]
     @article.genre = params[:genre]
     @article.lead = params[:lead]
+    @article.youtube = params[:youtube]
     @article.topic1 = params[:topic1]
     @article.content1 = params[:content1]
     @article.topic2 = params[:topic2]
