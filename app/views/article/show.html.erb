@@ -1,47 +1,45 @@
 <div class = "container1">
 <div class = "container4" style="background-color: white;">
-<div style="padding: 1%;">
+
 <% if @article.title.present? %>
 <h1 class="show-article-title-area"><%= raw(@article.title.gsub(/\n/,'<br>') )%></h1>
 <% else %>
 <% end %>
 
+<% case @article.genre
+    when "maker" %>
+    <div class="genre0 maker">メーカー</div>
+    <% when "retail" %>
+    <div class="genre0 retail">小売</div>
+    <% when "finance" %>
+    <div class="genre0 finance">金融</div>
+    <% when "infra" %>
+    <div class="genre0 infra">インフラ</div>
+    <% when "logi" %>
+    <div class="genre0 logi">物流</div>
+    <% when "it" %>
+    <div class="genre0 it">IT</div>
+    <% when "education" %>
+    <div class="genre0 education">教育</div>
+    <% when "sports" %>
+    <div class="genre0 sports">スポーツ</div>
+<% end %>
+
 <div style="text-align: center;">
 <% if @article.titleimg.present? %>
-<img src="<%= "/article_images/#{@article.titleimg}" %>" class="article_image">
+<img src="<%= "/article_images/#{@article.titleimg}" %>" class="article_image1">
 <% else %>
 <% end %>
 </div>
 
-<% case @article.genre
-            when "business" %>
-            <div class="genre0 business">ビジネス</div>
-            <% when "athlete" %>
-            <div class="genre0 athlete">アスリート</div>
-            <% when "art" %>
-            <div class="genre0 art">芸術</div>
-            <% when "politics" %>
-            <div class="genre0 politics">政治</div>
-            <% when "society" %>
-            <div class="genre0 society">社会</div>
-            <% when "philosophy" %>
-            <div class="genre0 philosophy">哲学</div>
-            <% when "education" %>
-            <div class="genre0 education">教育</div>
-            <% end %>
-          </div>
-
-<div style="margin-bottom: 50px;">
+<div style="margin-top: 40px;">
 <% if @article.lead.present? %>
 <%= raw(@article.lead.gsub(/\n/,'<br>') )%>
 <% else %>
 <% end %>
 </div>
 
- <div class="video">
-          <iframe src="<%= @article.youtube %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-          </iframe>
- </div>
+ 
 
 <div class="show-article">
 
@@ -58,12 +56,6 @@
 </p>
 <% else %>
 <% end %>
-<div style="text-align: center;">
-<% if @article.img1.present? %>
-<img src="<%= "/article_images/#{@article.img1}" %>" class="article_image" >
-<% else %>
-<% end %>
-</div>
 
 <% if @article.topic2.present? %>
 <div class="article-topic">
@@ -79,7 +71,7 @@
 <% end %>
 <div style="text-align: center;">
 <% if @article.img2.present? %>
-<img src="<%= "/article_images/#{@article.img2}" %>" class="article_image">
+<img src="<%= "/article_images/#{@article.img2}" %>" class="article_image2">
 <% else %>
 <% end %>
 </div>
@@ -98,22 +90,22 @@
 <% end %>
 <div style="text-align: center;">
 <% if @article.img3.present? %>
-<img src="<%= "/article_images/#{@article.img3}" %>" class="article_image">
+<img src="<%= "/article_images/#{@article.img3}" %>" class="article_image2">
 <% else %>
 <% end %>
 </div>
 
 
-<div class="show-button-area">
-<a href="/article/index" class="btn btn-success btn-sm show-button-text">記事一覧へ</a>
+</div>
+
+</div>
+</div>
+<div class="button-area">
+<a href="/article/index" class="btn btn-success btn-sm ">記事一覧へ</a>
 
 <% if @current_user %>
-	<div class="btn btn-success btn-sm">
-		<%= link_to("編集","/article/#{@article.id}/edit",:style=>"color:white; ") %>
+    <div class="btn btn-success btn-sm">
+        <%= link_to("編集","/article/#{@article.id}/edit",:style=>"color:white; ") %>
     </div>
-</div>
 <% end %>
-</div>
-</div>
-</div>
 </div>

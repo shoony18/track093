@@ -6,20 +6,22 @@
   <li class="genre0">
     <%= link_to("/article/genre/#{genicon.genre}",:style=>"text-decoration: none;") do %>
     <% case genicon.genre
-            when "business" %>
-            <div class="genre0 business">実業家</div>
-            <% when "athlete" %>
-            <div class="genre0 athlete">アスリート</div>
-            <% when "art" %>
-            <div class="genre0 art">芸術</div>
-            <% when "politics" %>
-            <div class="genre0 politics">政治</div>
-            <% when "society" %>
-            <div class="genre0 society">社会</div>
-            <% when "philosophy" %>
-            <div class="genre0 philosophy">哲学</div>
+            when "maker" %>
+            <div class="genre0 maker">メーカー</div>
+            <% when "retail" %>
+            <div class="genre0 retail">小売</div>
+            <% when "finance" %>
+            <div class="genre0 finance">金融</div>
+            <% when "infra" %>
+            <div class="genre0 infra">インフラ</div>
+            <% when "logi" %>
+            <div class="genre0 logi">物流</div>
+            <% when "it" %>
+            <div class="genre0 it">IT</div>
             <% when "education" %>
             <div class="genre0 education">教育</div>
+            <% when "sports" %>
+            <div class="genre0 sports">スポーツ</div>
             <% end %>
     <% end %>
     <% end %>
@@ -34,27 +36,26 @@
           <div class="article-title">
            <%= genArticle.title %>
            <% case genArticle.genre
-            when "business" %>
-            <div class="genre1 business">実業家</div>
-            <% when "athlete" %>
-            <div class="genre1 athlete">アスリート</div>
-            <% when "art" %>
-            <div class="genre1 art">芸術</div>
-            <% when "politics" %>
-            <div class="genre1 politics">政治</div>
-            <% when "society" %>
-            <div class="genre1 society">社会</div>
-            <% when "philosophy" %>
-            <div class="genre1 philosophy">哲学</div>
+            when "maker" %>
+            <div class="genre1 maker">メーカー</div>
+            <% when "retail" %>
+            <div class="genre1 retail">小売</div>
+            <% when "finance" %>
+            <div class="genre1 finance">金融</div>
+            <% when "infra" %>
+            <div class="genre1 infra">インフラ</div>
+            <% when "logi" %>
+            <div class="genre1 logi">物流</div>
+            <% when "it" %>
+            <div class="genre1 it">IT</div>
             <% when "education" %>
             <div class="genre1 education">教育</div>
+            <% when "sports" %>
+            <div class="genre1 sports">スポーツ</div>
             <% end %>
           </div>
-          <div class="video">
-          <iframe src="<%= genArticle.youtube %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-          </iframe>
-          </div>
-          <!-- <img class="article-title-img" src="< "/article_images/#{article.titleimg}" %>"> -->
+          
+          <img class="article-title-img" src="<%= "/article_images/#{genArticle.img1}" %>"> 
           </h4>
           <% end %>
           <% end %>
