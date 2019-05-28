@@ -34,7 +34,7 @@
           <%= link_to("/article/#{genArticle.id}",:style=>"text-decoration: none;") do %>
           <h4 class="article-title-area">
           <div class="article-title">
-           <%= genArticle.title %>
+           <%= raw(genArticle.title.gsub(/\n/,'<br>')) %>
            <% case genArticle.genre
             when "maker" %>
             <div class="genre1 maker">メーカー</div>
