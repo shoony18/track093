@@ -1,5 +1,5 @@
 /*スマホ向けレイアウト  */
-@media all and (min-width: 480px) {
+@media all and (min-width: 700px) {
   
   .top_title_sentence{
     font-size: 3rem;
@@ -34,11 +34,19 @@
 }
 
 /* web */
-@media all and (max-width: 300px) {
+@media all and (max-width: 385px) {
 
   .article-title-area {
     width: 95%;
     margin-left: 2.5%;
+    height: 280px;
+  }
+  .article-title-img {
+  height: 70%;
+  }
+
+  .article-title {
+  font-size: 2rem;
   }
 
   .btn {
