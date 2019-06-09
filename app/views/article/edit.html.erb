@@ -1,6 +1,8 @@
 <%= form_tag("/article/#{@article.id}/update",{multipart: true}) do %>
 <div class = "container1">
+
 <div class = "container4">
+
 <p>タイトル
 <textarea class="article_data1" name="title"><%= @article.title %></textarea>
 </p>
@@ -54,13 +56,17 @@
 
 </div>
 
-<div class="button-area">
-<input type="submit" class="btn btn-success btn-sm" value="保存">
+<div class="show-button-area">
+<input type="submit" class="btn btn-success btn-sm" value="保存" style="display: inline-block; font-size:2rem;">
 </div>
 <% end %>
 
-<div class="button-area">
-<%= link_to("削除", "/article/#{@article.id}/destroy", {method: "post"}) %>
+<div style="text-align: center;margin-top: 10px;">
+<div class="show-button-area btn btn-success btn-sm" style="display: inline-block; font-size:2rem;">
+<%= link_to("削除", "/article/#{@article.id}/destroy", {:method => :post, :style=>"color:white; "}) %>
 </div>
 </div>
+
+</div>
+
 </div>
