@@ -6,23 +6,29 @@
   <li class="genre0">
     <%= link_to("/article/genre/#{genicon.genre}",:style=>"text-decoration: none;") do %>
     <% case genicon.genre
-            when "maker" %>
-            <div class="genre0 maker">メーカー</div>
-            <% when "retail" %>
-            <div class="genre0 retail">小売</div>
-            <% when "finance" %>
-            <div class="genre0 finance">金融</div>
-            <% when "infra" %>
-            <div class="genre0 infra">インフラ</div>
-            <% when "logi" %>
-            <div class="genre0 logi">物流</div>
-            <% when "it" %>
-            <div class="genre0 it">IT</div>
-            <% when "education" %>
-            <div class="genre0 education">教育</div>
-            <% when "sports" %>
-            <div class="genre0 sports">スポーツ</div>
-            <% end %>
+    when "maker" %>
+    <div class="genre0 maker">メーカー</div>
+    <% when "retail" %>
+    <div class="genre0 retail">小売</div>
+    <% when "finance" %>
+    <div class="genre0 finance">金融</div>
+    <% when "infra" %>
+    <div class="genre0 infra">インフラ</div>
+    <% when "logi" %>
+    <div class="genre0 logi">物流</div>
+    <% when "it" %>
+    <div class="genre0 it">IT</div>
+    <% when "education" %>
+    <div class="genre0 education">教育</div>
+    <% when "sports" %>
+    <div class="genre0 sports">スポーツ</div>
+    <% when "culture" %>
+    <div class="genre0 culture">文化</div>
+    <% when "business" %>
+    <div class="genre0 business">ビジネス</div>
+    <% when "food" %>
+    <div class="genre0 food">飲食</div>
+    <% end %>
     <% end %>
     <% end %>
   </li>
@@ -38,21 +44,27 @@
            <% case genArticle.genre
             when "maker" %>
             <div class="genre1 maker">メーカー</div>
-            <% when "retail" %>
-            <div class="genre1 retail">小売</div>
-            <% when "finance" %>
-            <div class="genre1 finance">金融</div>
-            <% when "infra" %>
-            <div class="genre1 infra">インフラ</div>
-            <% when "logi" %>
-            <div class="genre1 logi">物流</div>
-            <% when "it" %>
-            <div class="genre1 it">IT</div>
-            <% when "education" %>
-            <div class="genre1 education">教育</div>
-            <% when "sports" %>
-            <div class="genre1 sports">スポーツ</div>
-            <% end %>
+    <% when "retail" %>
+    <div class="genre1 retail">小売</div>
+    <% when "finance" %>
+    <div class="genre1 finance">金融</div>
+    <% when "infra" %>
+    <div class="genre1 infra">インフラ</div>
+    <% when "logi" %>
+    <div class="genre1 logi">物流</div>
+    <% when "it" %>
+    <div class="genre1 it">IT</div>
+    <% when "education" %>
+    <div class="genre1 education">教育</div>
+    <% when "sports" %>
+    <div class="genre1 sports">スポーツ</div>
+    <% when "culture" %>
+    <div class="genre1 culture">文化</div>
+    <% when "business" %>
+    <div class="genre1 business">ビジネス</div>
+    <% when "food" %>
+    <div class="genre1 food">飲食</div>
+<% end %>
           </div>
           
           <img class="article-title-img" src="<%= "/article_images/#{genArticle.img1}" %>"> 
