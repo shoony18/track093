@@ -7,6 +7,10 @@ class ArticleController < ApplicationController
     
   end
 
+  def apply
+    
+  end
+
   def create
 
   	@article = Article.new(

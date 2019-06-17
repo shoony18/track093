@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post 'user/login' => "user#login"
   
   get 'article/new' => "article#new"
+  get 'article/apply' => "article#apply"
   get 'article/index' => "article#index"
   get 'article/genre/:genre' => "article#genre"
   get 'article/:id' => "article#show"
