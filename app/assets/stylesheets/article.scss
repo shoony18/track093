@@ -227,3 +227,27 @@
   display: inline-block;
 
 }
+
+
+.outsource{
+  margin-top: 50px;
+}
+
+
+.btn-gradient-3d-simple {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  background-image: linear-gradient(#ff8585 0%, #ff8585 100%);
+  box-shadow: 0px 2px 2px gray;
+  
+}
+
+.btn-gradient-3d-simple:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px gray;
+  border-bottom: none;
+}
