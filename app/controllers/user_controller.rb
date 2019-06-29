@@ -49,9 +49,9 @@ class UserController < ApplicationController
   end
 
   def logout
-  	session[:user_id] = nil
+  	session.delete(:user_id)
     flash[:notice] = "ログアウトしました"
-    redirect_to("/login/form")
+    redirect_to("/article/index")
   end
 
   def ensure_correct_user
