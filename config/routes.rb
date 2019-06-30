@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'user/create' => "user#create"
   get 'user/:id' => "user#mypage"
   get 'login/form' => "user#form"
-  delete 'user/logout' => "user#logout"
+  post 'user/logout' => "user#logout"
   post 'user/login' => "user#login"
   
   get 'article/new' => "article#new"
