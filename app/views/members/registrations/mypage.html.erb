@@ -28,7 +28,7 @@
 <h1  class="mypage-label">投稿コメント</h1>
 <div>
 
-<% if @comments %>
+<% if @comments.present? %>
 <!--    each文1個目始まり　　-->
 <!--     @articles.reverse_each do |article| %>-->
 
@@ -44,9 +44,9 @@
         <p>
             「<%= comment.content %>」  
         </p>
-        <%= @article.title %>
     </div>
-    
+＠<div style="display:inline; "><%= @article.title %>
+    </div>
  
     <!--　if文で「ユーザーコメントにひもづく記事IDが、ループ中の記事IDに合致しているか」を検証　-->
 <!--     if comment.article_id = article.id %>-->
@@ -68,6 +68,7 @@
 <!--     end %>-->
 <!--    each文1個目終わり　　--> 
 <% else %> 
+まだ投稿したコメントはありません。
 <% end %>
 
 </div>
