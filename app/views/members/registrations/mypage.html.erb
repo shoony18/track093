@@ -1,0 +1,76 @@
+<div class="container1">
+	<h4><%= @error_message %></h4>    
+<h1  class="mypage-label">ユーザー情報 </h1>
+
+<table>
+  <tr>
+    <th>ユーザー名</th>
+    <td><%= current_member.name %></td>
+  </tr>
+  <tr>
+    <th>メールアドレス</th>
+    <td><%= current_member.email %></td>
+  </tr>
+</table>  
+
+<br>
+<div class="button-area new">
+	<%= link_to("ログアウト", "/sign_out") %>
+</div>
+
+<div class="button-area new">
+<%= link_to("ユーザー情報の編集", "/members/edit") %>
+</div>    
+
+</div>
+
+<div class="container5">
+<h1  class="mypage-label">投稿コメント</h1>
+<div>
+
+<% if @comments %>
+<!--    each文1個目始まり　　-->
+<!--     @articles.reverse_each do |article| %>-->
+
+<!--　if文で「対象ユーザーのコメントがあるか」検証　-->
+<!--     if @comments.article_id.include?('article.id') %>-->
+    
+    <!--　each文2個目始まり　-->
+    <% @comments.reverse_each do |comment| %>
+    <% @article = Article.find_by(id: comment.article_id) %>
+    <!--link_to始まり    --> 
+    <%= link_to("/article/#{comment.article_id}",:style=>"text-decoration: none;") do %>     
+    <div class="mypage_comment_area0">
+        <p>
+            「<%= comment.content %>」  
+        </p>
+        <%= @article.title %>
+    </div>
+    
+ 
+    <!--　if文で「ユーザーコメントにひもづく記事IDが、ループ中の記事IDに合致しているか」を検証　-->
+<!--     if comment.article_id = article.id %>-->
+<!--     else %> -->
+<!--     end %>-->
+<!--if文の終わり    -->
+
+    <% end %>
+    <!--link_toの終わり    -->    
+
+    <% end %>
+    <!--　each文2個目終わり　-->
+        
+
+<!--     else %> -->
+<!--     end %>-->
+<!--if文の終わり    -->
+
+<!--     end %>-->
+<!--    each文1個目終わり　　--> 
+<% else %> 
+<% end %>
+
+</div>
+          <div class="clear"></div>
+</div>
+

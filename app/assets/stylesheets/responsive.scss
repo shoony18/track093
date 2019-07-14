@@ -1,4 +1,4 @@
-/*スマホ向けレイアウト  */
+/*web向けレイアウト  */
 @media all and (min-width: 700px) {
   
   .top_title_sentence{
@@ -33,8 +33,8 @@
   
 }
 
-/* web */
-@media all and (max-width: 385px) {
+/* スマホ */
+@media all and (max-width: 365px) {
 
   .article-title-area {
     width: 95%;

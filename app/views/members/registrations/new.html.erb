@@ -1,0 +1,48 @@
+<div class="container1">
+
+<h1 style="margin-top:10px;">新規登録</h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+　<div class="field">
+    <div style ="margin-top:10px;">ユーザー名</div><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+　<div class="field">
+     <div style ="margin-top:20px;">メールアドレス</div><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <div style ="margin-top:20px;">パスワード</div><br />
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> 文字以上の半角英数字)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <div style ="margin-top:20px;">パスワード確認</div><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+<br>
+<div class="actions devise-button">
+ <%= f.submit "登録",:style=>
+  "display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #E85A70;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  margin-top:10px;" %>
+  
+  </div>
+<% end %>
+<br>
+<%= render "members/shared/links" %>
+
+</div>

@@ -36,6 +36,13 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 
+# devise の実装
+gem 'devise'
+
+group :development do #開発環境のみ
+  gem 'letter_opener_web'
+end
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

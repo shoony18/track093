@@ -41,7 +41,26 @@
       </li>
       <% if @current_user %>
       <li class="nav-item">
-        <div class="nav-link"><%= link_to("マイページ", "/user/#{@current_user.id}" ,:style=>"color:black; font-size:2rem; text-decoration: none;") %>
+        <div class="nav-link"><%= link_to("管理者ページ", "/user/#{@current_user.id}" ,:style=>"color:black; font-size:2rem; text-decoration: none;") %>
+        </div>
+      </li>
+      <% end %>  
+      <% if member_signed_in? %>
+      <li class="nav-item">
+        <div class="nav-link"><%= link_to("マイページ", "/mypage" ,:style=>"color:black; font-size:2rem; text-decoration: none;") %>
+        </div>
+      </li>
+      <li class="nav-item">
+        <div class="nav-link"><%= link_to("ログアウト", "/sign_out" ,:style=>"color:black; font-size:2rem; text-decoration: none;") %>
+        </div>
+      </li>
+      <% else %>
+      <li class="nav-item">
+        <div class="nav-link"><%= link_to("ログイン", "/members/sign_in" ,:style=>"color:black; font-size:2rem; text-decoration: none;") %>
+        </div>
+      </li>
+      <li class="nav-item">
+        <div class="nav-link"><%= link_to("新規登録", "/members/sign_up" ,:style=>"color:black; font-size:2rem; text-decoration: none;") %>
         </div>
       </li>
       <% end %>  

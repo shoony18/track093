@@ -1,0 +1,61 @@
+<div class="container1">
+
+<h1 style="margin-top:10px;">ユーザー情報編集</h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+　
+　<div class="field">
+    <div style ="margin-top:20px;">ユーザー名</div><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+  <div class="field">
+    <div style ="margin-top:20px;">メールアドレス</div><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+      <div style ="margin-top:20px;">現在のパスワード</div><br />   <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div> 
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <div style ="margin-top:20px;">変更するパスワード<br>（変更しない場合、入力不要）</div><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> 文字以上の半角英数字</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <div style ="margin-top:20px;">パスワードの確認</div><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+    
+  <div class="actions" style="margin-top:10px;">
+    <%= f.submit "更新",:style=>
+  "display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #E85A70;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  margin-top:10px;"   %>
+  </div>
+<% end %>
+
+<br>
+<br>
+<h3>退会</h3>
+
+<p><%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当に削除して宜しいですか？ ?" }, method: :delete %></p>
+
+<%= link_to "戻る", :back %>
+
+</div>

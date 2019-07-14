@@ -105,9 +105,36 @@
 </div>
 
 </div>
+
+<div class="comment-area0">
+<h2>コメント</h2>
+<% if member_signed_in? %>
+
+<%= form_tag("/comment/#{@article.id}/create", {multipart: true}) do %>
+<div class="comment-area1">
+<textarea class="comment-textarea" name=content style="width:95%;"></textarea>
+<input type="submit" class="btn btn-danger btn-sm" style="font-size:1.5rem;" value="コメントの投稿">
+<% end %>
 </div>
+    
+<% else %>
+<% end %>
+
+<% @comments.each do |comment| %>
+<div class="comment-area2">
+    <% @member =Member.find_by(id:comment.comment_id) %>
+    @<%= @member.name %>
+    <%= comment.content %>
+</div>
+<% end %>
+    
+</div>
+
+</div>
+
+
 <div class="show-button-area">
-<a href="/article/index" class="btn btn-success btn-sm" style="display: inline-block; font-size:2rem;">記事一覧へ</a>
+<a href="/article/index" class="btn btn-secondary btn-sm" style="display: inline-block; font-size:1.5rem;">記事一覧へ</a>
 
 <% if @current_user %>
     <div class="btn btn-success btn-sm" style="display: inline-block; font-size:2rem;">
