@@ -106,36 +106,33 @@
 
 </div>
 
-<div class="comment-area0">
-<h2>コメント</h2>
-<% if member_signed_in? %>
 
-<%= form_tag("/comment/#{@article.id}/create", {multipart: true}) do %>
-<div class="comment-area1">
-<textarea class="comment-textarea" name=content style="width:95%;"></textarea>
-<input type="submit" class="btn btn-danger btn-sm" style="font-size:1.5rem;" value="コメントの投稿">
-<% end %>
-</div>
-    
-<% end %>
-
-<% @comments.each do |comment| %>
-    <div class="comment-area2" style="text-align:left;">
-        <% @member =Member.find_by(id:comment.comment_id) %>
-        @<%= @member.name %>
-        <%= comment.content %>
-    <% if comment.comment_id == current_member.id %>
-        <div class="btn btn-success btn-sm" >
-        <%= link_to("編集", "/comment/#{comment.id}/edit", {:style=>"color:white; "}) %>
-        </div>
-        <div class="btn btn-success btn-sm" >
-        <%= link_to("削除", "/comment/#{comment.id}/destroy", {:method => :post, :style=>"color:white; "}) %>    
+    <div class="comment-area0">
+        <h2>コメント</h2>
+        <% if member_signed_in? %>
+        <%= form_tag("/comment/#{@article.id}/create", {multipart: true}) do %>
+        <div class="comment-area1">
+            <textarea class="comment-textarea" name=content style="width:95%;"></textarea>
+            <input type="submit" class="btn btn-danger btn-sm" style="font-size:1.5rem;" value="コメントの投稿">
         </div>
         <% end %>
+        <% end %>
+       <% @comments.each do |comment| %>
+        <div class="comment-area2" style="text-align:left;">
+            <% @member =Member.find_by(id:comment.comment_id) %>
+            @<%= @member.name %>
+            <%= comment.content %>
+            <% if member_signed_in? && comment.comment_id == current_member.id %>
+            <div class="btn btn-success btn-sm" >
+                <%= link_to("編集", "/comment/#{comment.id}/edit", {:style=>"color:white; "}) %>
+            </div>
+            <div class="btn btn-success btn-sm" >
+                <%= link_to("削除", "/comment/#{comment.id}/destroy", {:method => :post, :style=>"color:white; "}) %>    
+            </div>
+            <% end %>
         </div>
-<% end %>
-    
-</div>
+        <% end %>
+    </div>
 
 </div>
 
