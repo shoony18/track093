@@ -127,7 +127,7 @@
                 <%= link_to("編集", "/comment/#{comment.id}/edit", {:style=>"color:white; "}) %>
             </div>
             <div class="btn btn-success btn-sm" >
-                <%= link_to("削除", "/comment/#{comment.id}/destroy", {:method => :post, :style=>"color:white; "}) %>    
+                <%= link_to("削除", "/comment/#{comment.id}/destroy", {:method => :post, :style=>"color:white;",:remote => true }) %>    
             </div>
             <% end %>
         </div>
