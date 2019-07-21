@@ -1,0 +1,24 @@
+<div class="container1">
+    <h4><%= @error_message %></h4>    
+
+    <h1  class="mypage-label">コメント編集 </h1>
+
+    <%= form_tag("/comment/#{@comment.id}/update",{multipart: true}) do %>
+
+    <textarea  name="content"><%= @comment.content %></textarea>
+
+
+    <div class="show-button-area">
+
+        <input type="submit" class="btn btn-success btn-sm" value="更新" style="display: inline-block; font-size:1.5rem;">
+        <div class="btn btn-success btn-sm" style="display: inline-block; font-size:1.5rem;">
+        <%= link_to("戻る","/article/#{@comment.article_id}",:style=>"color:white; ") %>
+        </div>
+
+    </div>
+
+    <% end %>
+
+
+</div>
+

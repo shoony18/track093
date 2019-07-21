@@ -39,7 +39,7 @@ class Members::RegistrationsController < Devise::RegistrationsController
   # end
 
   def mypage
-#      @articles = Article.all.order(id: :asc)
+      @articles = Article.all.order(id: :asc)
       @comments = Comment.where(comment_id: current_member.id)
   end
  

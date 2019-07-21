@@ -1,6 +1,8 @@
 Rails.application.routes.draw do  
-  get 'comment/detail'
+  get 'comment/:id/edit' => "comment#edit"
+  post 'comment/:id/update' => "comment#update"        
   post 'comment/:id/create' => "comment#create"    
+  post 'comment/:id/destroy' => "comment#destroy"    
 
 
   devise_for :members, :controllers => {

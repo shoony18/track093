@@ -16,10 +16,22 @@ class CommentController < ApplicationController
   end
 
   def destroy
+      @comment = Comment.find_by(id: params[:id])
+      @comment.destroy
+      redirect_to("/mypage")
+      
   end
     
   def edit
+      @comment = Comment.find_by(id: params[:id])
   end
     
+  def update
+      @comment = Comment.find_by(id: params[:id])
+      @comment.content = params[:content]
+      @comment.save
+#      redirect_to("/article/#{@comment.article_id}")
+      redirect_to("/mypage")
+  end
 
 end

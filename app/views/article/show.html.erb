@@ -117,15 +117,22 @@
 <% end %>
 </div>
     
-<% else %>
 <% end %>
 
 <% @comments.each do |comment| %>
-<div class="comment-area2">
-    <% @member =Member.find_by(id:comment.comment_id) %>
-    @<%= @member.name %>
-    <%= comment.content %>
-</div>
+    <div class="comment-area2" style="text-align:left;">
+        <% @member =Member.find_by(id:comment.comment_id) %>
+        @<%= @member.name %>
+        <%= comment.content %>
+    <% if comment.comment_id == current_member.id %>
+        <div class="btn btn-success btn-sm" >
+        <%= link_to("編集", "/comment/#{comment.id}/edit", {:style=>"color:white; "}) %>
+        </div>
+        <div class="btn btn-success btn-sm" >
+        <%= link_to("削除", "/comment/#{comment.id}/destroy", {:method => :post, :style=>"color:white; "}) %>    
+        </div>
+        <% end %>
+        </div>
 <% end %>
     
 </div>
