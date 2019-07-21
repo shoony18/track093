@@ -126,8 +126,10 @@
             <div class="btn btn-success btn-sm" >
                 <%= link_to("編集", "/comment/#{comment.id}/edit", {:style=>"color:white; "}) %>
             </div>
-            <div class="btn btn-success btn-sm" >
-                <%= link_to("削除", "/comment/#{comment.id}/destroy", {:method => :post, :style=>"color:white;",:remote => true }) %>    
+            <div style="display:inline-block;">
+                <%= form_tag("/comment/#{comment.id}/destroy", {multipart: true}) do %>
+                <input type="submit" class="btn btn-success btn-sm" style="font-size:1.0rem;" value="削除">
+                <% end %>                
             </div>
             <% end %>
         </div>
