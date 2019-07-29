@@ -2,13 +2,12 @@ html{
 	clear: both;
 	font-size: 62.5%;
 	background-color:  #B4DAED; 
-	
 }
 
 body{
 	font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
 	background-color:  #B4DAED; 
-
+    text-decoration: none;
 }
 
 
@@ -28,6 +27,9 @@ ul li{
 	list-style: none;
 }
 
+.clear{
+    clear: both;
+}
 .container0{
 	background-color:  #B4DAED; 
 	padding-top: 60px;

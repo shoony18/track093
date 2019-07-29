@@ -32,64 +32,64 @@
     <% @articles.reverse_each do |article| %>
     <!--　if文で「対象ユーザーのコメントがあるか」検証　-->     
     <% if @comments.where(article_id: article.id).present? %>
-    <%= link_to("/article/#{article.id}",:style=>"text-decoration: none;color:black;") do %>    
-    <div class="mypage-article-area">
-            <div class="mypage-article-title-area" >
-              <%= article.title %>
+    <div>
+        <%= link_to("/article/#{article.id}",:style=>"text-decoration: none;") do %>
+        <h4 class="article-title-area">
+            <div class="article-title">
+              <%= raw(article.title.gsub(/\n/,'<br>')) %>
               <% case article.genre when "maker" %>
-              <div class="genre0 mygenre maker">メーカー</div>
+              <div class="genre1 maker">メーカー</div>
               <% when "retail" %>
-              <div class="genre0 mygenre retail">小売</div>
+              <div class="genre1 retail">小売</div>
               <% when "finance" %>
-              <div class="genre0 mygenre finance">金融</div>
+              <div class="genre1 finance">金融</div>
               <% when "infra" %>
-              <div class="genre0 mygenre infra">インフラ</div>
+              <div class="genre1 infra">インフラ</div>
               <% when "logi" %>
-              <div class="genre0 mygenre logi">物流</div>
+              <div class="genre1 logi">物流</div>
               <% when "it" %>
-              <div class="genre0 mygenre it">IT</div> 
+              <div class="genre1 it">IT</div> 
               <% when "education" %> 
-              <div class="genre0 mygenre education">教育</div>  
+              <div class="genre1 education">教育</div>  
               <% when "sports" %>
-              <div class="genre0 mygenre sports">スポーツ</div> 
+              <div class="genre1 sports">スポーツ</div> 
               <% when "culture" %>
-              <div class="genre0 mygenre culture">文化</div> 
+              <div class="genre1 culture">文化</div> 
               <% when "business" %>
-              <div class="genre0 mygenre business">ビジネス</div> 
+              <div class="genre1 business">ビジネス</div> 
               <% when "food" %>
-              <div class="genre0 mygenre food">飲食</div>
+              <div class="genre1 food">飲食</div>
               <% end %>
-            </div>    
-            <div class="mypage-img-area">
-            <img class="mypage-img"  src="<%= "/article_images/#{article.img1}" %>">
-            </div>   
+            </div>
+            <img class="article-title-img" src="<%= "/article_images/#{article.img1}" %>">   
+        </h4>   
         <% end %>      
     <div class="clear"></div>
-    </div>
+    
     <!--　each文2個目始まり　-->
     <% @comments.reverse_each do |comment| %>
     <!--     @article = Article.find_by(id: comment.article_id) %>-->
     <!--link_to始まり    --> 
     <!--　if文で「ユーザーコメントにひもづく記事IDが、ループ中の記事IDに合致しているか」を検証　-->
     <% if comment.article_id == article.id %>
-    <%= link_to("/article/#{comment.article_id}",:style=>"text-decoration: none;color:black;") do %>     
-    <div class="comment-area2">
+    <%= link_to("/article/#{comment.article_id}",:style=>"text-decoration: none;") do %>     
+    <div class="mypage_comment_area0">
+        <p>
             「<%= comment.content %>」
+        </p>
+    </div>
     <% end %>
-    <!--link_toの終わり    --> 
-        <div style="display:inline-block;">
-            <div class="btn btn-success btn-sm" >  
-                <%= link_to("編集", "/comment/#{comment.id}/edit", {:style=>"color:white; "}) %>
-            </div>
-            <div style="display:inline-block;">  
+    <!--link_toの終わり    -->    
+    <div class="btn btn-success btn-sm" >  
+        <%= link_to("編集", "/comment/#{comment.id}/edit", {:style=>"color:white; "}) %>
+    </div>
+            <div style="display:inline-block;">
                 <%= form_tag("/comment/#{comment.id}/destroy", {multipart: true}) do %>
                 <input type="submit" class="btn btn-success btn-sm" style="font-size:1.0rem;" value="削除">
                 <% end %>                
             </div>
-        </div>
-    </div>
     <% end %>
-
+  
     <% end %>
     <!--　each文2個目終わり　-->
     
@@ -99,13 +99,14 @@
 
     <% end %>
     <!--　each文1個目終わり　-->
-    
+    </div>
     
     <% else %> 
     まだ投稿したコメントはありません。
     <% end %>     
     <div class="clear"></div>
-
+    
+  
 </div>
 </div>
 
