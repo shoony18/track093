@@ -27,12 +27,14 @@
     height: 150px;
 
   }
-
-
-
-  
 }
-
+@media all and (min-width: 650px) {
+    .mypage-comment-area{
+        text-align: center;
+        display: inline-block;
+        width: 45%;
+    }
+}
 /* スマホ */
 @media all and (max-width: 365px) {
 
@@ -48,6 +50,7 @@
   .article-title {
   font-size: 2rem;
   }
+  
 
   .btn {
     width: 100%;

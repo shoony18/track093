@@ -25,17 +25,19 @@
 </div>
 
 <div class="container1">
-<div class="container4">
+<div class="container4" style="text-align:center;">
     <h1  class="mypage-label">投稿コメント</h1>
     <% if @comments.present? %>
     <!--    each文1個目始まり　　--> 
     <% @articles.reverse_each do |article| %>
     <!--　if文で「対象ユーザーのコメントがあるか」検証　-->     
     <% if @comments.where(article_id: article.id).present? %>
-    <%= link_to("/article/#{article.id}",:style=>"text-decoration: none;color:black;") do %>    
+ 
+    <div class="mypage-comment-area">
+     <%= link_to("/article/#{article.id}",:style=>"text-decoration: none;color:black;") do %>    
     <div class="mypage-article-area">
             <div class="mypage-article-title-area" >
-              <%= article.title %>
+              <%= raw(article.title.gsub(/\n/,'<br>')) %>
               <% case article.genre when "maker" %>
               <div class="genre0 mygenre maker">メーカー</div>
               <% when "retail" %>
@@ -64,7 +66,7 @@
             <img class="mypage-img"  src="<%= "/article_images/#{article.img1}" %>">
             </div>   
         <% end %>      
-    <div class="clear"></div>
+    <div class="clear"></div>    
     </div>
     <!--　each文2個目始まり　-->
     <% @comments.reverse_each do |comment| %>
@@ -73,13 +75,13 @@
     <!--　if文で「ユーザーコメントにひもづく記事IDが、ループ中の記事IDに合致しているか」を検証　-->
     <% if comment.article_id == article.id %>
     <%= link_to("/article/#{comment.article_id}",:style=>"text-decoration: none;color:black;") do %>     
-    <div class="comment-area2">
-            「<%= comment.content %>」
+    <div class="comment-area2" >
+            <%= comment.content %>
     <% end %>
     <!--link_toの終わり    --> 
         <div style="display:inline-block;">
             <div class="btn btn-success btn-sm" >  
-                <%= link_to("編集", "/comment/#{comment.id}/edit", {:style=>"color:white; "}) %>
+                <%= link_to("編集", "/comment/#{comment.id}/edit", {:style=>"color:white; font-size:1.0rem;"}) %>
             </div>
             <div style="display:inline-block;">  
                 <%= form_tag("/comment/#{comment.id}/destroy", {multipart: true}) do %>
@@ -88,18 +90,19 @@
             </div>
         </div>
     </div>
-    <% end %>
 
     <% end %>
-    <!--　each文2個目終わり　-->
     
+    <% end %>
+    <!--　each文2個目終わり　-->
+
+    </div>  
     <% else %> 
     <!--　if文で「対象ユーザーのコメントがあるか」検証のelse　-->
     <% end %>
 
     <% end %>
     <!--　each文1個目終わり　-->
-    
     
     <% else %> 
     まだ投稿したコメントはありません。

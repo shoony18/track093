@@ -124,7 +124,7 @@
             <%= comment.content %>
             <% if member_signed_in? && comment.comment_id == current_member.id %>
             <div class="btn btn-success btn-sm" >
-                <%= link_to("編集", "/comment/#{comment.id}/edit", {:style=>"color:white; "}) %>
+                <%= link_to("編集", "/comment/#{comment.id}/edit", {:style=>"color:white;font-size:1.0rem; "}) %>
             </div>
             <div style="display:inline-block;">
                 <%= form_tag("/comment/#{comment.id}/destroy", {multipart: true}) do %>
