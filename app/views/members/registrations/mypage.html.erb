@@ -79,16 +79,43 @@
             <%= comment.content %>
     <% end %>
     <!--link_toの終わり    --> 
-        <div style="display:inline-block;">
-            <div class="btn btn-success btn-sm" >  
-                <%= link_to("編集", "/comment/#{comment.id}/edit", {:style=>"color:white; font-size:1.0rem;"}) %>
-            </div>
-            <div style="display:inline-block;">  
-                <%= form_tag("/comment/#{comment.id}/destroy", {multipart: true}) do %>
-                <input type="submit" class="btn btn-success btn-sm" style="font-size:1.0rem;" value="削除">
-                <% end %>                
-            </div>
+                   
+  <button type="button" class="btn btn-success " data-toggle="modal" data-target="#comment">編集</button>
+  <div class="modal fade" id="comment" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <%= form_tag("/comment/#{comment.id}/update",{multipart: true}) do %>
+        <div class="modal-body" style="text-align:center;">
+            <textarea class="popup_textarea" style="width:90%;" name="content"><%= comment.content %></textarea>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+          <input type="submit" class="btn btn-success" value="更新する">
+        </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+            
+  <button type="button" class="btn btn-success " data-toggle="modal" data-target="#destroy">削除</button>
+  <div class="modal fade" id="destroy" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <%= form_tag("/comment/#{comment.id}/destroy", {multipart: true}) do %>
+        <div class="modal-body" style="text-align:center;">
+            <h2>本当に削除していいですか？</h2>
+        </div>
+        <div class="modal-footer">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+          <input type="submit" class="btn btn-success" value="削除する">
+        </div>
+        </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+            
     </div>
 
     <% end %>

@@ -18,7 +18,7 @@ class CommentController < ApplicationController
   def destroy
       @comment = Comment.find_by(id: params[:id])
       @comment.destroy
-      redirect_to("/mypage")
+      redirect_to :back
       
   end
     
@@ -30,8 +30,7 @@ class CommentController < ApplicationController
       @comment = Comment.find_by(id: params[:id])
       @comment.content = params[:content]
       @comment.save
-#      redirect_to("/article/#{@comment.article_id}")
-      redirect_to("/mypage")
+      redirect_to :back
   end
 
 end
