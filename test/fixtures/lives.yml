@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member_id: 1
+  date_yy: 1
+  date_mm: 1
+  date_dd: 1
+  sleep_time_lastnight: 1
+  body_temp: 1
+  body_height: 1
+  body_weight: 1
+  body_feeling: MyString
+  injury: 1
+
+two:
+  member_id: 1
+  date_yy: 1
+  date_mm: 1
+  date_dd: 1
+  sleep_time_lastnight: 1
+  body_temp: 1
+  body_height: 1
+  body_weight: 1
+  body_feeling: MyString
+  injury: 1

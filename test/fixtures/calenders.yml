@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_yy: 1
+  date_mm: 1
+  date_dd: 1
+  day_of_the_weekend: 1
+  color: MyString
+
+two:
+  date_yy: 1
+  date_mm: 1
+  date_dd: 1
+  day_of_the_weekend: 1
+  color: MyString

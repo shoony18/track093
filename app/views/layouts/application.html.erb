@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>shoodia</title>
+    <title>track</title>
     <%= csrf_meta_tags %>
 
+    <%= include_gon %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -16,29 +17,42 @@
       gtag('js', new Date());
       gtag('config', 'UA-141780120-1');
     </script>
-
+      
   </head>
 
   <body>
   <header>
   <nav class="navbar navbar-expand-lg navbar-light " style="background-color: white; "> 
   <a class="navbar-brand header" href="/" style="font-weight: bold; ">
-    <%= image_tag "/shoodia.png", :style => "width:150px; height:40px;" %>
+    <%= image_tag "/track_logo.png", :style => "width:150px; height:40px;" %>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="height: 50px; width: 70px;">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right;">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right;font-family: 'Meiryo UI',sans-serif;">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <div class="nav-link"><%= link_to("読む", "/article/index",:style=>"color:black; font-size:2rem; text-decoration: none;") %>
+        <div class="nav-link">
+            <%= image_tag "/diary_icon.png", :style => "width:10%; height:10%;margin-top:0;" %>
+            <%= link_to("ダイアリー", "/diary/year",:style=>"color:black; font-size:2rem; text-decoration: none;") %>
         </div>
       </li>
       <li class="nav-item active">
-        <div class="nav-link"><%= link_to("投稿する", "/article/apply",:style=>"color:black; font-size:2rem; text-decoration: none;") %>
+        <div class="nav-link">
+            <%= image_tag "/dashboard_icon.png", :style => "width:10%; height:10%;" %>
+            <%= link_to("ダッシュボード", "/dashboard/index",:style=>"color:black; font-size:2rem; text-decoration: none;") %>
         </div>
       </li>
+<!--
+      <li class="nav-item active">
+        <div class="nav-link"> link_to("ニュース", "/article/apply",:style=>"color:black; font-size:2rem; text-decoration: none;")
+        </div>
+      </li>
+      <li class="nav-item active">
+        <div class="nav-link"> link_to("ライフ", "/article/apply",:style=>"color:black; font-size:2rem; text-decoration: none;") 
+        </div>
+-->
       <% if @current_user %>
       <li class="nav-item">
         <div class="nav-link"><%= link_to("管理者ページ", "/user/#{@current_user.id}" ,:style=>"color:black; font-size:2rem; text-decoration: none;") %>

@@ -1,0 +1,53 @@
+<div class = "container1" >
+    <div class="container7">
+    <div class="myChart_title_area">
+        <h2 class="myChart_title">次戦</h2>
+    </div>
+    <div class="next_game_area">
+        <div class="demo demo7">
+            <div class="heading">
+                <span class="title">Date</span>
+                <span class="caption"><%= @recent_game[0] %>/<%= @recent_game[1] %>/<%= @recent_game[2] %></span>
+            </div>
+            <div class="heading">
+                <span class="title">Content</span>
+                <span class="caption"><%= @recent_game[3] %></span>
+            </div>
+            <div class="heading">
+                <span class="title">Program</span>
+                <span class="caption"><%= @recent_game[4] %></span>
+            </div>
+        </div>
+    </div>
+    <div class="myChart_title_area">
+        <h2 class="myChart_title">練習日数</h2>
+    </div>
+    <canvas id="myChart_training_time" width="400" height="400"></canvas>
+    <script>draw_graph_training_time();</script>
+    <div class="myChart_title_area">
+        <h2 class="myChart_title">練習ジャンル</h2>
+    </div>
+    <canvas id="myChart_genre" width="400" height="400"></canvas>
+    <script>draw_graph_genre();</script>
+    <div class="myChart_title_area">
+        <h2 class="myChart_title">練習負荷</h2>
+    </div>
+    <canvas id="myChart_stress" width="400" height="400"></canvas>
+    <script>draw_graph_stress();</script>
+    <div class="myChart_title_area">
+        <h2 class="myChart_title">練習評価</h2>
+    </div>
+    <canvas id="myChart_training_evaluation" width="400" height="400"></canvas>
+    <script>draw_graph_training_evaluation();</script>
+    <div class="myChart_title_area">
+        <h2 class="myChart_title">試合日数</h2>
+    </div>
+    <canvas id="myChart_game_time" width="400" height="400"></canvas>
+    <script>draw_graph_game_time();</script>
+    <div class="myChart_title_area">
+        <h2 class="myChart_title">試合評価</h2>
+    </div>
+    <canvas id="myChart_game_evaluation" width="400" height="400"></canvas>
+    <script>draw_graph_game_evaluation();</script>
+    </div>
+</div>

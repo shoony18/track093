@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member_id: 1
+  content: MyString
+  program: MyString
+  date_yy: 1
+  date_mm: 1
+  date_dd: 1
+  target: 1
+  plan_comment: MyString
+  result: 1
+  evaluation: MyString
+  after_comment: MyString
+
+two:
+  member_id: 1
+  content: MyString
+  program: MyString
+  date_yy: 1
+  date_mm: 1
+  date_dd: 1
+  target: 1
+  plan_comment: MyString
+  result: 1
+  evaluation: MyString
+  after_comment: MyString

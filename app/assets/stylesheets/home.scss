@@ -1,12 +1,11 @@
 html{
 	clear: both;
 	font-size: 62.5%;
-	background-color:  #B4DAED; 
+	background-color: #4DC0B2;
 }
 
 body{
-	font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
-	background-color:  #B4DAED; 
+	background-color: #4DC0B2;
     text-decoration: none;
 }
 
@@ -15,6 +14,7 @@ header{
 	width: 100%;
 	display: block;
 	position: fixed;
+    z-index: 100;
 }
 
 
@@ -27,21 +27,33 @@ ul li{
 	list-style: none;
 }
 
+textarea{
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+input{
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
 .clear{
     clear: both;
 }
 .container0{
-	background-color:  #B4DAED; 
 	padding-top: 60px;
 	text-align: center;
 	padding-bottom: 80px;
+    font-family: 'Meiryo UI',sans-serif;
+	background-color: #4DC0B2;
 }
 .container1 {
+    height: 100%;
+    min-height: 700px;
 	max-width: 800px;
-	margin-left: auto;
-	margin-right: auto;
 	text-align: center;
 	padding: 10px 2% 5% 2%;
+	background-color: #4DC0B2;
 }
 
 .container2{
@@ -54,19 +66,23 @@ ul li{
 .container3 {
 	text-align: center;
 	padding: 20px 5% 50px 5%;
-	background-color: #B4DAED;
 }
 
 .container4{
-	background-color: #B4DAED;
 	padding: 2% ;
 	margin-top: 0%;
 	font-size: 1.5rem;
 	text-align: left;
+	background-color: #4DC0B2;
 }
 .container5{
     margin-left: 25%;
     width: 50%;
+}
+
+.container6{
+    width: 100%;
+    text-align: center;
 }
 
 .top_title_sentence{

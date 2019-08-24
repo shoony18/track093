@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member_id: 1
+  daymenu_title: MyString
+  daymenu_content: MyString
+  date_yy: 1
+  date_mm: 1
+  date_dd: 1
+  genre: MyString
+  stress: MyString
+  plan_comment: MyString
+  done: 1
+  evaluation: MyString
+  after_comment: MyString
+
+two:
+  member_id: 1
+  daymenu_title: MyString
+  daymenu_content: MyString
+  date_yy: 1
+  date_mm: 1
+  date_dd: 1
+  genre: MyString
+  stress: MyString
+  plan_comment: MyString
+  done: 1
+  evaluation: MyString
+  after_comment: MyString

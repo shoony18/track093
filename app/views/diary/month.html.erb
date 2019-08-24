@@ -1,0 +1,239 @@
+<div class="container1">
+    <div class="container6">
+        <% if @k_pre_calenders.first.day_of_the_weekend == 6 %>
+        <%= link_to("/diary/#{@t_pre_calender.date_yy}/#{@t_pre_calender.date_mm}",:style=>"text-decoration: none;") do %>
+        <div class="arrow1"></div>          
+        <% end %>
+        <% else %>
+        <%= link_to("/diary/#{@pre_calenders.first.date_yy}/#{@pre_calenders.first.date_mm}",:style=>"text-decoration: none;") do %>
+        <div class="arrow1"></div>          
+        <% end %>
+        <% end %>
+        
+        
+        <div class="year_label">
+            <%= @calenders.first.date_yy %>年
+            <%= @calenders.first.date_mm %>月        
+        </div>
+        
+        <% if @k_next_calenders.first.day_of_the_weekend == 0 %> 
+        <%= link_to("/diary/#{@t_next_calender.date_yy}/#{@t_next_calender.date_mm}",:style=>"text-decoration: none;") do %>
+        <div class="arrow2"></div>  
+        <% end %>
+        <% else %>
+        <%= link_to("/diary/#{@next_calenders.first.date_yy}/#{@next_calenders.first.date_mm}",:style=>"text-decoration: none;") do %>
+        <div class="arrow2"></div>          
+        <% end %>
+        <% end %>
+
+        <div class="diary_top_area0">
+            <div class="diary_top_area2">
+                <div class="diary_top_area3">
+                <%= link_to("/diary/#{@calenders.first.date_yy}/#{@calenders.first.date_mm}",:style=>"text-decoration: none;") do %>
+                <%= image_tag "/training_icon.jpg", :style => "width:70%;height:70%;" %>
+                <% end %>
+                    <p>training</p>
+                </div>
+                <div class="diary_top_area3">
+                <%= link_to("/game/#{@calenders.first.date_yy}/#{@calenders.first.date_mm}",:style=>"text-decoration: none;") do %>
+                <%= image_tag "/game_icon.png", :style => "width:70%;height:70%;" %>
+                <% end %>
+                    <p>game</p>
+                </div>
+            </div>            
+        </div>
+    <table>
+        <tr>
+            <th>日</th>
+            <th>月</th>
+            <th>火</th>
+            <th>水</th>
+            <th>木</th>
+            <th>金</th>
+            <th>土</th>
+        </tr>
+        <tr>
+            <% if @pre_calenders.present? %>     
+            <% @pre_calenders.reverse_each do |pre_calender| %>            
+            <td>
+                <%= pre_calender.date_dd %>
+            </td>            
+            <% end %>
+            <% else %>
+            <% end %>
+        
+        <% @calenders.each do |calender| %>
+            <td>
+                <div class="dd_content1">
+                    <button type="button" class="btn btn-success " style="border-color:gray;background-color:gray;"data-toggle="modal" data-target="#training<%= calender.id %>">
+                        <%= calender.date_dd %>
+                    </button>
+                </div>
+                
+                <% @trainings.each do |training| %>
+                <% if training.date_dd == calender.date_dd %> 
+
+                <% case training.stress when "強い" %>
+                <div class="dd_content2 veryhard"><%= training.daymenu_title %></div>
+                <% when "やや強い" %>
+                <div class="dd_content2 hard"><%= training.daymenu_title %></div>
+                <% when "普通" %>
+                <div class="dd_content2 medium"><%= training.daymenu_title %></div>
+                <% when "やや弱い" %>
+                <div class="dd_content2 right"><%= training.daymenu_title %></div>
+                <% when "弱い" %>
+                <div class="dd_content2 veryright"><%= training.daymenu_title %></div>
+                <% when "なし" %>
+                <div class="dd_content2 stress_none"><%= training.daymenu_title %></div>
+                <% end %>
+
+                <div class="modal fade" id="training<%= calender.id %>" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <%= form_tag("/diary/#{calender.date_yy}/#{calender.date_mm}/#{calender.date_dd}/update",{multipart: true}) do %>
+                            <div class="form-style-5">
+                                <div id="training_form">
+                                    <form>
+                                    <div class="date_label"><%= calender.date_yy %>/<%= calender.date_mm %>/<%= calender.date_dd %></div>
+                                    <fieldset>
+                                        <legend><span class="number">1</span>予定</legend>
+                                        <input type="text" name="daymenu_title" value="<%= training.daymenu_title %>"placeholder="メインメニュー *">
+                                        <textarea name="daymenu_content" placeholder="その他のメニュー *"><%= training.daymenu_content %></textarea>
+                                        <select id="genre" name="genre">
+                                            <option value="<%= training.genre %>"><%= training.genre %></option>
+                                            <option value="">練習カテゴリーを選択</option>
+                                            <option value="基礎">基礎</option>
+                                            <option value="追込">追込</option>
+                                            <option value="実戦">実戦</option>
+                                            <option value="調整">調整</option>
+                                            <option value="アクティブレスト">アクティブレスト</option>
+                                            <option value="レスト">レスト</option>
+                                            <option value="その他">その他</option>
+                                        </select>      
+                                        <select id="stress" name="stress">
+                                            <option value="<%= training.stress %>"><%= training.stress %></option>
+                                            <option value="">練習強度を選択</option>
+                                            <option value="強い">強い</option>
+                                            <option value="やや強い">やや強い</option>
+                                            <option value="普通">普通</option>
+                                            <option value="やや弱い">やや弱い</option>
+                                            <option value="弱い">弱い</option>
+                                            <option value="なし">なし</option>
+                                        </select>      
+                                        <textarea name="plan_comment" placeholder="【一言メモ】練習で意識する点などをここに書き留めておこう！"><%= training.plan_comment %></textarea>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend><span class="number">2</span> 振り返り</legend>
+                                        <div style="margin-top:10px;margin-bottom:10px;"><%= check_box "done", "上記の練習を実施" %>上記の練習を実施</div>
+                                        <select id="evaluation" name="evaluation">
+                                            <option value="<%= training.evaluation %>"><%= training.evaluation %></option>
+                                            <option value="">自己評価を選択</option>
+                                            <option value="満足">満足</option>
+                                            <option value="少し満足">少し満足</option>
+                                            <option value="普通">普通</option>                                
+                                            <option value="少し不満">少し不満</option>
+                                            <option value="不満">不満</option>
+                                        </select>      
+                                        <textarea name="after_comment" placeholder="【自由記述欄】練習を振り返って、良かった点やできなかった点などを自由に書き留めておこう！"><%= training.after_comment %></textarea>
+                                    </fieldset> 
+                                    <input type="submit" value="更新する" />
+                                    </form>
+                                </div>
+                            </div> 
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                            </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>   
+                
+                <% end %>
+                <% end %>
+                
+                <% if @trainings.include?(calender.date_dd) %>
+                <% else %>
+                <div class="modal fade" id="training<%= calender.id %>" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <%= form_tag("/diary/#{calender.date_yy}/#{calender.date_mm}/#{calender.date_dd}/create",{multipart: true}) do %>
+                            <div class="form-style-5">
+                                <div id="training_form">
+                                    <form>
+                                    <div class="date_label"><%= calender.date_yy %>/<%= calender.date_mm %>/<%= calender.date_dd %></div>
+                                    <fieldset>
+                                        <legend><span class="number">1</span>予定</legend>
+                                        <input type="text" name="daymenu_title" placeholder="メインメニュー *">
+                                        <textarea name="daymenu_content" placeholder="その他のメニュー *"></textarea>
+                                        <select id="genre" name="genre">
+                                            <option value="">練習カテゴリーを選択</option>
+                                            <option value="基礎">基礎</option>
+                                            <option value="追込">追込</option>
+                                            <option value="実戦">実戦</option>
+                                            <option value="調整">調整</option>
+                                            <option value="アクティブレスト">アクティブレスト</option>
+                                            <option value="レスト">レスト</option>
+                                            <option value="その他">その他</option>
+                                        </select>      
+                                        <select id="stress" name="stress">
+                                            <option value="">練習強度を選択</option>
+                                            <option value="強い">強い</option>
+                                            <option value="やや強い">やや強い</option>
+                                            <option value="普通">普通</option>
+                                            <option value="やや弱い">やや弱い</option>
+                                            <option value="弱い">弱い</option>
+                                            <option value="なし">なし</option>
+                                        </select>      
+                                        <textarea name="plan_comment" placeholder="【一言メモ】練習で意識する点などをここに書き留めておこう！"></textarea>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend><span class="number">2</span> 振り返り</legend>
+                                        <div style="margin-top:10px;margin-bottom:10px;"><%= check_box "done", "上記の練習を実施" %>上記の練習を実施</div>
+                                        <select id="evaluation" name="evaluation">
+                                            <option value="">自己評価を選択</option>
+                                            <option value="満足">満足</option>
+                                            <option value="少し満足">少し満足</option>
+                                            <option value="普通">普通</option>                                
+                                            <option value="少し不満">少し不満</option>
+                                            <option value="不満">不満</option>
+                                        </select>      
+                                        <textarea name="after_comment" placeholder="【自由記述欄】練習を振り返って、良かった点やできなかった点などを自由に書き留めておこう！"></textarea>
+                                    </fieldset> 
+                                    <input type="submit" value="登録する" />
+                                    </form>
+                                </div>
+                            </div>                            
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                            </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>  
+                
+                <% end %>
+            </td>
+        
+            <% if calender.day_of_the_weekend == 6 %>            
+        </tr>
+        <% end %>
+        <% end %>
+
+        <% if @next_calenders.present? %>             
+        <% @next_calenders.each do |next_calender| %>
+            <td>
+                <%= next_calender.date_dd %>
+            </td>
+        <% end %>
+        <% else %>
+        <% end %>
+        
+    </table>
+                   
+        <div class="diary_top_area2">
+            <a href="/diary/year">
+                 <%= image_tag "/calender_icon.png", :style => "width:7%;height:7%;" %>                 
+             </a>        
+        </div>
+    </div>
+</div>

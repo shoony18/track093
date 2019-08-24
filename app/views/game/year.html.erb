@@ -1,0 +1,24 @@
+<div class="container1">
+    <div class="container4">
+        <% @calenders.each do |calender| %>        
+
+        <% if calender.date_yy <= 2018 ||calender.date_yy >= 2025 %>
+        <% break %>        
+        <% end %>
+
+        <% if calender.date_mm == 1 %>
+        <div class="year_label">
+            <%= calender.date_yy %>年
+        </div><br>
+        <% end %>
+    
+        <%= link_to("/game/#{calender.date_yy}/#{calender.date_mm}",{class: "btn-circle-3d"}) do %>
+        <%= calender.date_mm %>月
+        <% end %>
+        <% if calender.date_mm == 12 %>
+        <br>
+        <% end %>
+    
+        <% end %>
+    </div>
+</div>

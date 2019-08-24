@@ -1,0 +1,246 @@
+<div class="container1">
+    <div class="container6">        
+        <% if @k_pre_calenders.first.day_of_the_weekend == 6 %>
+        <%= link_to("/game/#{@t_pre_calender.date_yy}/#{@t_pre_calender.date_mm}",:style=>"text-decoration: none;") do %>
+        <div class="arrow1"></div>          
+        <% end %>
+        <% else %>
+        <%= link_to("/game/#{@pre_calenders.first.date_yy}/#{@pre_calenders.first.date_mm}",:style=>"text-decoration: none;") do %>
+        <div class="arrow1"></div>          
+        <% end %>
+        <% end %>
+        
+        <div class="year_label">
+            <%= @calenders.first.date_yy %>年
+            <%= @calenders.first.date_mm %>月        
+        </div>
+        
+        <% if @k_next_calenders.first.day_of_the_weekend == 0 %> 
+        <%= link_to("/game/#{@t_next_calender.date_yy}/#{@t_next_calender.date_mm}",:style=>"text-decoration: none;") do %>
+        <div class="arrow2"></div>  
+        <% end %>
+        <% else %>
+        <%= link_to("/game/#{@next_calenders.first.date_yy}/#{@next_calenders.first.date_mm}",:style=>"text-decoration: none;") do %>
+        <div class="arrow2"></div>          
+        <% end %>
+        <% end %>
+        
+        <div class="diary_top_area0">
+            <div class="diary_top_area2">
+                <div class="diary_top_area3">
+                <%= link_to("/diary/#{@calenders.first.date_yy}/#{@calenders.first.date_mm}",:style=>"text-decoration: none;") do %>
+                <%= image_tag "/training_icon.jpg", :style => "width:70%;height:70%;" %>
+                <% end %>
+                    <p>training</p>
+                </div>
+                <div class="diary_top_area3">
+                <%= link_to("/game/#{@calenders.first.date_yy}/#{@calenders.first.date_mm}",:style=>"text-decoration: none;") do %>
+                <%= image_tag "/game_icon.png", :style => "width:70%;height:70%;" %>
+                <% end %>
+                    <p>game</p>
+                </div>
+            </div>            
+        </div>
+
+    <table>
+        <tr>
+            <th>日</th>
+            <th>月</th>
+            <th>火</th>
+            <th>水</th>
+            <th>木</th>
+            <th>金</th>
+            <th>土</th>
+        </tr>
+        <tr>
+            <% if @pre_calenders.present? %>     
+            <% @pre_calenders.reverse_each do |pre_calender| %>            
+            <td>
+                <%= pre_calender.date_dd %>
+            </td>            
+            <% end %>
+            <% else %>
+            <% end %>
+        
+        <% @calenders.each do |calender| %>
+            <td>
+                <div class="dd_content1">
+                    <button type="button" class="btn btn-success " style="border-color:gray;background-color:gray;"data-toggle="modal" data-target="#game<%= calender.id %>">
+                        <%= calender.date_dd %>
+                    </button>
+                </div>
+                
+                <% @games.each do |game| %>
+                <% if game.date_dd == calender.date_dd %> 
+                <div class="dd_content2 stress_none"><%= game.content %></div>
+
+                <div class="modal fade" id="game<%= calender.id %>" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <%= form_tag("/game/#{calender.date_yy}/#{calender.date_mm}/#{calender.date_dd}/update",{multipart: true}) do %>
+                            <div class="form-style-5">
+                                    <form>
+                                    <div class="date_label"><%= calender.date_yy %>/<%= calender.date_mm %>/<%= calender.date_dd %></div>
+                                    <fieldset>
+                                        <legend><span class="number">1</span>出場予定</legend>
+                                        <input type="text" name="content" value="<%= game.content %>"placeholder="大会・記録会名 *">
+                                        <select id="program" name="program">
+                                            <option value="<%= game.program %>"><%= game.program %></option>
+                                            <option value="">種目を選択</option>
+                                            <option value="100m">100m</option>
+                                            <option value="200m">200m</option>
+                                            <option value="400m">400m</option>
+                                            <option value="800m">800m</option>
+                                            <option value="1500m">1500m</option>
+                                            <option value="3000m">3000m</option>
+                                            <option value="3000m障害">3000m障害</option>
+                                            <option value="5000m">5000m</option>
+                                            <option value="10000m">10000m</option>
+                                            <option value="ハーフマラソン">ハーフマラソン</option>
+                                            <option value="20km競歩">20km競歩</option>
+                                            <option value="50km競歩">50km競歩</option>
+                                            <option value="100mH">100mH</option>
+                                            <option value="110mH">110mH</option>
+                                            <option value="400mH">400mH</option>
+                                            <option value="走幅跳">走幅跳</option>
+                                            <option value="三段跳">三段跳</option>
+                                            <option value="走高跳">走高跳</option>
+                                            <option value="棒高跳">棒高跳</option>
+                                            <option value="やり投">やり投</option>
+                                            <option value="砲丸投">砲丸投</option>
+                                            <option value="円盤投">円盤投</option>
+                                            <option value="ハンマー投">ハンマー投</option>
+                                            <option value="10種競技">10種競技</option>
+                                            <option value="8種競技">8種競技</option>
+                                            <option value="4×100mリレー">4×100mリレー</option>
+                                            <option value="4×400mリレー">4×400mリレー</option>
+                                            <option value="その他">その他</option>
+                                        </select>      
+                                        <input type="text" name="target" value="<%= game.target %>"placeholder="目標記録">
+                                        <textarea name="plan_comment" placeholder="【一言メモ】試合で意識する点などをここに書き留めておこう！"><%= game.plan_comment %></textarea>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend><span class="number">2</span>結果</legend>
+                                        <input type="text" name="result" value="<%= game.result %>"placeholder="記録">
+                                        <select id="evaluation" name="evaluation">
+                                            <option value="<%= game.evaluation %>"><%= game.evaluation %></option>
+                                            <option value="">自己評価を選択</option>
+                                            <option value="満足">満足</option>
+                                            <option value="少し満足">少し満足</option>
+                                            <option value="普通">普通</option>                                
+                                            <option value="少し不満">少し不満</option>
+                                            <option value="不満">不満</option>
+                                        </select>      
+                                        <textarea name="after_comment" placeholder="【自由記述欄】試合を振り返って、良かった点やできなかった点などを自由に書き留めておこう！"><%= game.after_comment %></textarea>
+                                    </fieldset> 
+                                    <input type="submit" value="更新する" />
+                                    </form>
+                            </div> 
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                            </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>   
+                
+                <% end %>
+                <% end %>
+                
+                <% if @games.include?(calender.date_dd) %>
+                <% else %>
+                <div class="modal fade" id="game<%= calender.id %>" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <%= form_tag("/game/#{calender.date_yy}/#{calender.date_mm}/#{calender.date_dd}/create",{multipart: true}) do %>
+                            <div class="form-style-5">
+                                    <form>
+                                    <div class="date_label"><%= calender.date_yy %>/<%= calender.date_mm %>/<%= calender.date_dd %></div>
+                                    <fieldset>
+                                        <legend><span class="number">1</span>出場予定</legend>
+                                        <input type="text" name="content" placeholder="大会・記録会名 *">
+                                        <select id="program" name="genre">
+                                            <option value="">種目を選択</option>
+                                            <option value="100m">100m</option>
+                                            <option value="200m">200m</option>
+                                            <option value="400m">400m</option>
+                                            <option value="800m">800m</option>
+                                            <option value="1500m">1500m</option>
+                                            <option value="3000m">3000m</option>
+                                            <option value="3000m障害">3000m障害</option>
+                                            <option value="5000m">5000m</option>
+                                            <option value="10000m">10000m</option>
+                                            <option value="ハーフマラソン">ハーフマラソン</option>
+                                            <option value="20km競歩">20km競歩</option>
+                                            <option value="50km競歩">50km競歩</option>
+                                            <option value="100mH">100mH</option>
+                                            <option value="110mH">110mH</option>
+                                            <option value="400mH">400mH</option>
+                                            <option value="走幅跳">走幅跳</option>
+                                            <option value="三段跳">三段跳</option>
+                                            <option value="走高跳">走高跳</option>
+                                            <option value="棒高跳">棒高跳</option>
+                                            <option value="やり投">やり投</option>
+                                            <option value="砲丸投">砲丸投</option>
+                                            <option value="円盤投">円盤投</option>
+                                            <option value="ハンマー投">ハンマー投</option>
+                                            <option value="10種競技">10種競技</option>
+                                            <option value="8種競技">8種競技</option>
+                                            <option value="4×100mリレー">4×100mリレー</option>
+                                            <option value="4×400mリレー">4×400mリレー</option>
+                                            <option value="その他">その他</option>
+                                        </select>      
+                                        <input type="text" name="target" placeholder="目標記録">
+                                        <textarea name="plan_comment" placeholder="【一言メモ】試合で意識する点などをここに書き留めておこう！"></textarea>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend><span class="number">2</span>結果</legend>
+                                        <input type="text" name="result" placeholder="記録">
+                                        <select id="evaluation" name="evaluation">
+                                            <option value="">自己評価を選択</option>
+                                            <option value="満足">満足</option>
+                                            <option value="少し満足">少し満足</option>
+                                            <option value="普通">普通</option>                                
+                                            <option value="少し不満">少し不満</option>
+                                            <option value="不満">不満</option>
+                                        </select>      
+                                        <textarea name="after_comment" placeholder="【自由記述欄】試合を振り返って、良かった点やできなかった点などを自由に書き留めておこう！"></textarea>
+                                    </fieldset> 
+                                    <input type="submit" value="登録する" />
+                                    </form>
+                            </div> 
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                            </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>   
+                
+                <% end %>
+            </td>
+        
+            <% if calender.day_of_the_weekend == 6 %>            
+        </tr>
+        <% end %>
+        <% end %>
+
+        <% if @next_calenders.present? %>             
+        <% @next_calenders.each do |next_calender| %>
+            <td>
+                <%= next_calender.date_dd %>
+            </td>
+        <% end %>
+        <% else %>
+        <% end %>
+        
+    </table>
+                
+            <div class="diary_top_area2">
+             <a href="/game/year">
+                 <%= image_tag "/calender_icon.png", :style => "width:7%;height:7%;" %>                 
+             </a>        
+            </div>
+
+    </div>
+</div>

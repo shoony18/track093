@@ -1,4 +1,16 @@
 Rails.application.routes.draw do  
+  get 'game/year' => "game#year"
+  get 'game/:date_yy/:date_mm' => "game#month"
+  post 'game/:date_yy/:date_mm/:date_dd/create' => "game#create"
+  post 'game/:date_yy/:date_mm/:date_dd/update' => "game#update"
+
+  get 'dashboard/index' => "dashboard#index"
+
+  get 'diary/year' => "diary#year"
+  get 'diary/:date_yy/:date_mm' => "diary#month"
+  post 'diary/:date_yy/:date_mm/:date_dd/create' => "diary#create"
+  post 'diary/:date_yy/:date_mm/:date_dd/update' => "diary#update"
+    
   get 'comment/:id/edit' => "comment#edit"
   post 'comment/:id/update' => "comment#update"        
   post 'comment/:id/create' => "comment#create"    
@@ -45,7 +57,7 @@ Rails.application.routes.draw do
   get 'home/top' => "home#top"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get "/" => "home#top"
+  get "/" => "dashboard#index"
 end
 
 
